@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paperflow — Abigail Schidler</title>
     <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/paperflow.css" />
   </head>
   <body>
 
@@ -20,15 +21,20 @@
       </div>
     </nav>
 
-    <div class="page-hero">
+    <div class="page-hero pf-hero">
       <div class="container">
+        <img
+          class="pf-hero-icon"
+          src="../assets/images/icons/paperflow-boat.png"
+          alt=""
+          aria-hidden="true"
+        />
         <p class="breadcrumb">
           <a href="../projects.html">Projects</a> &rsaquo; Paperflow
         </p>
         <h1>Paperflow</h1>
         <p class="page-intro">
-          An AI-assisted research presentation generator that transforms
-          papers into structured presentation flows.
+          Paperflow is an LLM-assisted workspace that helps researchers transform dense academic papers into structured presentation flows.
         </p>
       </div>
     </div>
@@ -49,7 +55,7 @@
             <a href="https://github.com/AbigailSchidler/Paper-Flow" class="btn btn-outline">GitHub</a>
           </div>
 
-          <div class="project-section" id="workflow-overview">
+          <div class="project-section pf-gallery" id="workflow-overview">
             <h2>Workflow Overview</h2>
 
             <div class="screenshot-gallery">
@@ -131,19 +137,20 @@
             </div>
           </div>
 
-          <div class="project-section">
+          <div class="project-section pf-section">
             <h2>Overview</h2>
             <p>
-              Add a detailed description of Paperflow here — what problem it solves,
-              who it's for, and what makes it interesting.
+              Paperflow is an LLM-assisted workspace that helps researchers transform dense academic papers into structured presentation flows. Users upload a PDF and specify constraints like audience level and presentation length, and Paperflow generates a timeline-based outline with aligned talking points and speaker notes. By combining automated content extraction with interactive editing tools, the system supports rapid presentation preparation while keeping users in control of the final narrative.
             </p>
           </div>
 
-          <div class="project-section">
+          <div class="project-section pf-section">
             <h2>How it works</h2>
             <p>
-              Describe the technical approach, key design decisions, and anything
-              you learned while building it.
+              Paperflow uses a modular pipeline that combines PDF structure extraction with staged LLM generation to support iterative human-AI collaboration. After parsing a paper into sections using PDFPlumber, Gemini generates candidate presentation structure, slide titles, and talking points, which users review and refine before transcript generation. The interface represents presentation flow as editable timeline nodes that can be reordered, expanded, or annotated with Markdown, enabling spatial reasoning about structure while preserving transparency through source-linked citations for each generated talking point.
+            </p>
+            <p>
+              A key design goal of Paperflow was maintaining user agency during AI-assisted generation. Instead of producing a fixed slide deck automatically, the system introduces structured checkpoints where users review parsed sections, approve outlines, adjust timing constraints, and regenerate transcripts with targeted feedback. This staged interaction model improves trust, reduces downstream correction effort, and supports flexible adaptation of research content for different audiences and presentation formats.
             </p>
           </div>
 

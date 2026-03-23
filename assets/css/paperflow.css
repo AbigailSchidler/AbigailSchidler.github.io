@@ -1,0 +1,118 @@
+/* ==========================================================================
+   paperflow.css — Project-specific theming for the Paperflow detail page
+   Scoped entirely to .pf-* classes; does not override global portfolio styles.
+   ========================================================================== */
+
+
+/* ── Palette ──────────────────────────────────────────────────────────────── */
+
+:root {
+  --pf-blue:        #8faec2;                     /* water blue (matches --color-accent-water) */
+  --pf-lilac:       #a89fc7;                     /* soft lilac */
+  --pf-blue-tint:   rgba(143, 174, 194, 0.07);   /* hero wash */
+  --pf-line:        rgba(143, 174, 194, 0.38);   /* section border */
+  --pf-heading:     #5a7f96;                     /* accessible darkened water blue */
+}
+
+
+/* ── Hero band ────────────────────────────────────────────────────────────── */
+
+/*
+ * Adds a very subtle blue-to-lilac gradient wash behind the hero band.
+ * Keeps --color-bg visible through the tint so it doesn't clash with the nav.
+ */
+.pf-hero {
+  background: linear-gradient(
+    140deg,
+    rgba(143, 174, 194, 0.09) 0%,
+    rgba(168, 159, 199, 0.06) 100%
+  );
+}
+
+/*
+ * Paper boat icon — decorative only.
+ * Sits above the breadcrumb as a small project mark.
+ */
+.pf-hero-icon {
+  display: block;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  margin-bottom: 1.1rem;
+  opacity: 0.82;
+  /* Prevent the default link underline treatment on ancestor <a> elements */
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* ── Section accent panels ────────────────────────────────────────────────── */
+
+/*
+ * .pf-section wraps the Overview and How it Works text sections.
+ * A left border in the Paperflow blue-to-lilac gradient evokes the
+ * vertical timeline axis of the product.
+ */
+.pf-section {
+  position: relative;
+  padding-left: 1.25rem;
+  border-left: 2px solid;
+  border-image: linear-gradient(
+    to bottom,
+    var(--pf-blue) 0%,
+    var(--pf-lilac) 100%
+  ) 1;
+}
+
+/*
+ * Section headings take the Paperflow blue.
+ * #5a7f96 clears WCAG AA at this font size (~1.1rem bold).
+ */
+.pf-section h2 {
+  color: var(--pf-heading);
+}
+
+/*
+ * Small circular node before each section heading — references the
+ * timeline node UI pattern from the Paperflow product.
+ */
+.pf-section h2::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--pf-blue);
+  border-radius: 50%;
+  margin-right: 0.55rem;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  flex-shrink: 0;
+}
+
+
+/* ── Screenshot gallery ───────────────────────────────────────────────────── */
+
+/*
+ * Override the global gallery hover to use Paperflow's water-blue glow
+ * instead of the portfolio's sage-green accent.
+ */
+.pf-gallery .gallery-item:hover {
+  border-color: var(--pf-blue);
+  box-shadow: 0 4px 22px rgba(143, 174, 194, 0.28);
+}
+
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .pf-hero-icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0.875rem;
+  }
+
+  .pf-section {
+    padding-left: 1rem;
+  }
+}

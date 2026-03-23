@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart Cart — Abigail Schidler</title>
     <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/smart-cart.css" />
   </head>
   <body>
 
@@ -20,15 +21,14 @@
       </div>
     </nav>
 
-    <div class="page-hero">
+    <div class="page-hero sc-hero">
       <div class="container">
         <p class="breadcrumb">
           <a href="../projects.html">Projects</a> &rsaquo; Smart Cart
         </p>
         <h1>Smart Cart</h1>
         <p class="page-intro">
-          A mobile meal-planning app that automates grocery list creation
-          across recipes.
+          A Flutter-based mobile app that turns recipes into consolidated grocery lists with normalized quantities and location-aware store discovery.
         </p>
       </div>
     </div>
@@ -37,7 +37,7 @@
       <div class="container">
         <div class="project-detail">
 
-          <div class="tag-group">
+          <div class="tag-group sc-tags">
             <span class="tag">Flutter</span>
             <span class="tag">Isar Database</span>
             <span class="tag">Google Maps API</span>
@@ -48,7 +48,7 @@
             <a href="https://github.com/AbigailSchidler/Smart-Cart" class="btn btn-outline">GitHub</a>
           </div>
 
-          <div class="project-section" id="workflow-overview">
+          <div class="project-section sc-gallery" id="workflow-overview">
             <h2>Workflow Overview</h2>
 
             <div class="screenshot-gallery">
@@ -154,19 +154,31 @@
             </div>
           </div>
 
-          <div class="project-section">
+          <div class="project-section sc-section">
             <h2>Overview</h2>
             <p>
-              Add a detailed description of Smart Cart here — what problem it solves,
-              who it's for, and what makes it interesting.
+              Smart Cart is a Flutter-based mobile application designed to simplify the process of planning meals and generating grocery lists. The app allows users to create meals, add ingredients with structured quantity and unit support, and automatically aggregate shared ingredients across recipes into a consolidated shopping list. It also integrates location-aware store discovery to help users identify nearby grocery options, reducing the friction between planning meals and completing a shopping trip.
             </p>
           </div>
 
-          <div class="project-section">
+          <div class="project-section sc-section">
             <h2>How it works</h2>
             <p>
-              Describe the technical approach, key design decisions, and anything
-              you learned while building it.
+              Smart Cart organizes the cooking workflow into three connected steps: meal planning, ingredient normalization, and grocery aggregation. Users create meals by adding ingredients with selectable measurement units such as cups, grams, or teaspoons, which are stored persistently and reused across the app. Ingredients from multiple meals are automatically merged into a unified grocery list, where users can inspect quantities, track usage across recipes, and adjust measurement formats when needed. The system also integrates map-based store discovery to help users locate nearby grocery stores directly from their shopping workflow.
+            </p>
+          </div>
+
+          <div class="project-section sc-section">
+            <h2>Technical highlights</h2>
+            <p>
+              Smart Cart was implemented using Flutter with persistent local storage through Isar to support structured ingredient tracking and user unit preferences. The app required careful handling of asynchronous loading for large grocery store map datasets and included GPS-based store lookup using OpenStreetMap integration. Additional features included gesture-based navigation, ingredient quantity conversion support, and internationalization-ready unit handling to support flexible measurement workflows across recipes.
+            </p>
+          </div>
+
+          <div class="project-section sc-section">
+            <h2>Usability evaluation</h2>
+            <p>
+              Smart Cart was evaluated using System Usability Scale (SUS) testing with nine participants and received a score of 84.167, indicating strong usability. The app achieved a usability score of 88.889 and a learnability score of 82.986, demonstrating that users were able to quickly understand and navigate the meal planning workflow.
             </p>
           </div>
 

@@ -1,0 +1,112 @@
+/* ==========================================================================
+   smart-cart.css — Project-specific theming for the Smart Cart detail page
+   Scoped entirely to .sc-* classes; does not override global portfolio styles.
+   ========================================================================== */
+
+
+/* ── Palette ──────────────────────────────────────────────────────────────── */
+
+:root {
+  --sc-green:       #7a9e74;                     /* muted sage-olive green from app tiles */
+  --sc-green-deep:  #4e7249;                     /* darkened for text — clears WCAG AA */
+  --sc-green-tint:  rgba(122, 158, 116, 0.08);   /* card fill */
+  --sc-green-soft:  rgba(122, 158, 116, 0.14);   /* tag pill fill */
+  --sc-green-line:  rgba(122, 158, 116, 0.25);   /* borders and rules */
+}
+
+
+/* ── Hero band ────────────────────────────────────────────────────────────── */
+
+/*
+ * Applies a very light green wash to the hero, evoking the app's
+ * soft warm-green background tones. Intentionally more subtle than
+ * the app itself so the page doesn't clash with the portfolio warm-white body.
+ */
+.sc-hero {
+  background: linear-gradient(
+    140deg,
+    rgba(122, 158, 116, 0.08) 0%,
+    rgba(149, 181, 143, 0.05) 100%
+  );
+}
+
+
+/* ── Technology tags — pill style ─────────────────────────────────────────── */
+
+/*
+ * Overrides the global tag shape for this page.
+ * Pill border-radius + green fill references the "Add to Meals" and
+ * "More" button style in the app — rounded, friendly, product-native.
+ * Text stays in --color-text for accessibility.
+ */
+.sc-tags .tag {
+  border-radius: 999px;
+  background: var(--sc-green-soft);
+  border-color: rgba(122, 158, 116, 0.30);
+  padding: 0.25rem 0.75rem;
+}
+
+
+/* ── Text section cards ───────────────────────────────────────────────────── */
+
+/*
+ * .sc-section wraps the Overview and How it Works text sections.
+ * A rounded card with a light green fill references the ingredient tile
+ * aesthetic from the app — soft, contained, structured.
+ */
+.sc-section {
+  background: var(--sc-green-tint);
+  border: 1px solid var(--sc-green-line);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+}
+
+/*
+ * Section headings in the Smart Cart green.
+ * #4e7249 on white is ~5.1:1, clearing WCAG AA at this size.
+ */
+.sc-section h2 {
+  color: var(--sc-green-deep);
+}
+
+/*
+ * Short underline rule beneath section headings — a contained accent bar
+ * that references Smart Cart's horizontal dividers without feeling borrowed
+ * from the Paperflow left-border style.
+ */
+.sc-section h2::after {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background: var(--sc-green);
+  border-radius: 2px;
+  margin-top: 0.45rem;
+  opacity: 0.65;
+}
+
+
+/* ── Screenshot gallery ───────────────────────────────────────────────────── */
+
+/*
+ * More generous border-radius on gallery frames to echo the rounded-rect
+ * language used throughout the app UI. Green hover glow instead of sage.
+ */
+.sc-gallery .gallery-item {
+  border-radius: 14px;
+  border-color: rgba(122, 158, 116, 0.22);
+}
+
+.sc-gallery .gallery-item:hover {
+  border-color: var(--sc-green);
+  box-shadow: 0 4px 22px rgba(122, 158, 116, 0.26);
+}
+
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .sc-section {
+    padding: 1.25rem 1.25rem;
+  }
+}
