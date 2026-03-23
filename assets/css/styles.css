@@ -468,6 +468,125 @@ nav {
   font-size: 0.875rem;
 }
 
+/* Project card thumbnail */
+.project-card__thumbnail {
+  margin: -1.75rem -1.75rem 0;
+  border-radius: var(--radius) var(--radius) 0 0;
+  overflow: hidden;
+}
+
+.project-card__thumbnail img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-card__thumbnail img {
+  transform: scale(1.03);
+}
+
+/* Screenshot gallery */
+.screenshot-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.875rem;
+  margin-top: 1.25rem;
+}
+
+.gallery-item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: zoom-in;
+  display: block;
+  aspect-ratio: 16 / 9;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.gallery-item:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 20px rgba(143, 174, 194, 0.18);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+/* CSS-only lightbox via :target */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(36, 48, 43, 0.88);
+}
+
+.lightbox-frame {
+  position: relative;
+  z-index: 1;
+  max-width: min(90vw, 1080px);
+  max-height: 90vh;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-surface);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+}
+
+.lightbox-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 88vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 2;
+  width: 2rem;
+  height: 2rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  font-size: 1.1rem;
+  text-decoration: none;
+  line-height: 1;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.lightbox-close:hover {
+  background: var(--color-accent-tint);
+  border-color: var(--color-accent);
+}
+
 .project-section {
   margin-top: 2.5rem;
 }
@@ -911,6 +1030,12 @@ footer {
 /* ==========================================================================
    15. Responsive
    ========================================================================== */
+
+@media (max-width: 640px) {
+  .screenshot-gallery {
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (max-width: 768px) {
   section {
