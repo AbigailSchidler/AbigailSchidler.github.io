@@ -485,6 +485,66 @@ nav {
 }
 
 
+/* Additional / supporting projects
+ * Smaller cards, lighter weight, simpler hover — signals secondary status
+ * without hiding the work.
+ */
+.section-description {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  max-width: 560px;
+  line-height: 1.65;
+  margin-top: -1.75rem;  /* pull up close to the h2 */
+  margin-bottom: 2rem;
+}
+
+.supporting-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.project-card--supporting {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* no box-shadow on hover — keeps these visually quieter than featured cards */
+  transition: border-color 0.15s ease;
+}
+
+.project-card--supporting:hover {
+  border-color: var(--color-accent);
+}
+
+.project-card--supporting .project-name {
+  font-size: 0.95rem;
+}
+
+.project-card--supporting .project-blurb {
+  font-size: 0.85rem;
+  flex: 1;
+}
+
+.project-card--supporting .tag-group {
+  margin-bottom: 0;
+}
+
+.project-card--supporting .project-links {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+/* Separator block used on the projects page between featured and additional */
+.projects-secondary {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--color-border);
+}
+
+
 /* ==========================================================================
    11. Courses
    ========================================================================== */
@@ -719,6 +779,10 @@ footer {
   }
 
   .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .supporting-grid {
     grid-template-columns: 1fr;
   }
 
