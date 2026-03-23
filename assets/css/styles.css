@@ -637,6 +637,137 @@ nav {
   line-height: 1.5;
 }
 
+/* Upcoming course variant
+ * Dashed border signals "not yet taken" — consistent with .project-card--wip.
+ * Course codes (e.g. 473) go in the .course-num slot in place of sequence numbers.
+ */
+.course-item--upcoming {
+  border-style: dashed;
+}
+
+.course-item--upcoming:hover {
+  border-color: var(--color-accent);
+}
+
+.course-item--upcoming .course-num {
+  color: var(--color-muted);
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.course-code {
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+
+/* Research paper subsection within a course-item
+ * Pure typographic hierarchy — no cards or borders so it doesn't
+ * compete visually with the course cards themselves.
+ */
+.course-papers {
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.course-papers-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 0.85rem;
+}
+
+.paper-entry + .paper-entry {
+  margin-top: 0.875rem;
+}
+
+.paper-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+  margin-bottom: 0.1rem;
+}
+
+.paper-authors {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  font-style: italic;
+  margin-bottom: 0.3rem;
+}
+
+.paper-takeaway {
+  font-size: 0.825rem;
+  color: var(--color-muted);
+  line-height: 1.55;
+}
+
+/* Tooltip — CSS only, no JS
+ * Used inline within .paper-authors text.
+ * Positioned above the trigger word; fades in on hover.
+ */
+.tooltip {
+  position: relative;
+  display: inline;
+  cursor: default;
+  border-bottom: 1px dotted var(--color-muted);
+  color: var(--color-accent);
+}
+
+.tooltip .tooltip-text {
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 0.3rem 0.65rem;
+  border-radius: 5px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  /* keep it above other content */
+  z-index: 10;
+}
+
+/* Small arrow pointing down toward the trigger word */
+.tooltip .tooltip-text::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--color-text);
+}
+
+.tooltip:hover .tooltip-text,
+.tooltip:focus-within .tooltip-text {
+  opacity: 1;
+}
+
+/* On narrow screens, anchor to the left edge instead of centering,
+ * so the tooltip can't overflow the viewport. */
+@media (max-width: 480px) {
+  .tooltip .tooltip-text {
+    left: 0;
+    transform: none;
+  }
+
+  .tooltip .tooltip-text::after {
+    left: 1rem;
+    transform: none;
+  }
+}
+
 
 /* ==========================================================================
    12. Music
