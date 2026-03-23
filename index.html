@@ -1,12 +1,277 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abigail Schidler</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    <h1>Abigail Schidler</h1>
-    <h2>Projects</h2>
-    <ul>Paperflow</ul>
+
+    <!-- ── Nav ───────────────────────────────────────────────── -->
+    <nav aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">Abigail Schidler</a>
+        <ul class="nav-links">
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="composing.html">Music</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ── Hero ──────────────────────────────────────────────── -->
+    <section id="hero">
+      <div class="container">
+        <div class="hero-grid">
+
+          <div class="hero-text">
+            <p class="hero-eyebrow">Portfolio</p>
+            <h1 class="hero-name">Abigail<br>Schidler</h1>
+            <p class="hero-role">Computer Science + Music @ University of Washington</p>
+            <p class="hero-intro">
+              I'm a UW student pursuing dual degrees in Computer Science and Music,
+              focused on human-AI interaction, NLP, and tools that support learning,
+              research, and creativity.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">View Projects</a>
+              <a href="resume.pdf" class="btn btn-outline" target="_blank" rel="noopener">Resume</a>
+              <a href="#contact" class="btn btn-outline">Contact</a>
+            </div>
+          </div>
+
+          <div class="hero-portrait">
+            <img src="assets/images/profile.jpg" alt="Portrait of Abigail Schidler" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Interests ─────────────────────────────────────────── -->
+    <section id="interests">
+      <div class="container">
+        <p class="section-label">Focus areas</p>
+        <h2 class="section-title">What I'm interested in</h2>
+
+        <div class="interests-grid">
+          <div class="interest-card">
+            <div class="interest-icon">🤝</div>
+            <div class="interest-label">Human-AI Interaction</div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-icon">📄</div>
+            <div class="interest-label">NLP &amp; Document Workflows</div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-icon">♿</div>
+            <div class="interest-label">Accessibility-Conscious Design</div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-icon">🎵</div>
+            <div class="interest-label">Music &amp; Creative Technology</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Projects ──────────────────────────────────────────── -->
+    <section id="projects">
+      <div class="container">
+        <p class="section-label">Work</p>
+        <h2 class="section-title">Selected Projects</h2>
+
+        <div class="projects-grid">
+
+          <!-- Paperflow -->
+          <article class="project-card">
+            <div class="project-name">Paperflow</div>
+            <p class="project-blurb">
+              An AI-assisted research presentation generator that transforms
+              papers into structured presentation flows.
+            </p>
+            <div class="tag-group">
+              <span class="tag">Python</span>
+              <span class="tag">NLP</span>
+              <span class="tag">LLM</span>
+              <span class="tag">React</span>
+            </div>
+            <div class="project-links">
+              <a href="projects/paperflow.html" class="btn btn-primary">View Project</a>
+              <a href="#" class="btn btn-outline">GitHub</a>
+            </div>
+          </article>
+
+          <!-- Smart Cart -->
+          <article class="project-card">
+            <div class="project-name">Smart Cart</div>
+            <p class="project-blurb">
+              A mobile meal-planning app that automates grocery list creation
+              across recipes.
+            </p>
+            <div class="tag-group">
+              <span class="tag">React Native</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Node.js</span>
+            </div>
+            <div class="project-links">
+              <a href="projects/smart-cart.html" class="btn btn-primary">View Project</a>
+              <a href="#" class="btn btn-outline">GitHub</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Courses ────────────────────────────────────────────── -->
+    <section id="courses">
+      <div class="container">
+        <p class="section-label">Education</p>
+        <h2 class="section-title">Courses that shaped how I think</h2>
+
+        <div class="courses-list">
+
+          <div class="course-item">
+            <span class="course-num">01</span>
+            <div>
+              <div class="course-name">Human-AI Interaction Capstone</div>
+              <p class="course-note">
+                Pushed me to think about AI not as a product feature but as a
+                design material — where trust, transparency, and agency matter as
+                much as accuracy.
+              </p>
+            </div>
+          </div>
+
+          <div class="course-item">
+            <span class="course-num">02</span>
+            <div>
+              <div class="course-name">Interaction Programming</div>
+              <p class="course-note">
+                Taught me to prototype quickly and test assumptions early —
+                a habit that now shapes every project from day one.
+              </p>
+            </div>
+          </div>
+
+          <div class="course-item">
+            <span class="course-num">03</span>
+            <div>
+              <div class="course-name">Data Structures &amp; Algorithms</div>
+              <p class="course-note">
+                Grounded my intuition for when elegance and efficiency actually
+                matter, and when clarity should win instead.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <a href="courses.html" class="btn btn-ghost">
+          See all courses
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ── Music ─────────────────────────────────────────────── -->
+    <section id="music">
+      <div class="container">
+        <p class="section-label">Creative practice</p>
+        <h2 class="section-title">Music &amp; Composition</h2>
+
+        <div class="music-inner">
+          <p>
+            Composition is a growing part of how I think and create. I approach
+            music the way I approach software: iteratively, with close attention
+            to structure and intuition about when to break the rules.
+          </p>
+          <p>
+            This section will grow to include original works, analytical
+            writing, and projects that sit at the intersection of music and
+            technology.
+          </p>
+          <a href="composing.html" class="btn btn-ghost">
+            Visit Composing
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Footer / Contact ──────────────────────────────────── -->
+    <footer id="contact">
+      <div class="footer-inner">
+        <h2 class="footer-heading">Get in touch</h2>
+        <p class="footer-sub">
+          I'm always happy to talk about projects, research, or collaborations.
+        </p>
+
+        <div class="footer-links">
+          <a href="mailto:abigailschidler15@gmail.com" class="footer-link">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <path d="M1 3.5h13v9H1v-9zM1 3.5l6.5 5L14 3.5"
+                    stroke="currentColor" stroke-width="1.25"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Email
+          </a>
+          <a href="https://linkedin.com/in/abigail-schidler" class="footer-link"
+             target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <rect x="1" y="1" width="13" height="13" rx="2"
+                    stroke="currentColor" stroke-width="1.25"/>
+              <path d="M4 6v5M4 4v.5M6.5 11V8.5c0-1.5 3-1.5 3 0V11M6.5 6v5"
+                    stroke="currentColor" stroke-width="1.25"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/AbigailSchidler" class="footer-link"
+             target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <path d="M7.5 1a6.5 6.5 0 0 0-2.055 12.666c.325.06.444-.141.444-.313
+                       0-.154-.006-.563-.009-1.106-1.808.393-2.19-.872-2.19-.872
+                       -.296-.751-.722-.951-.722-.951-.59-.403.044-.395.044-.395
+                       .652.046 1.004.67 1.004.67.585.1 1.005-.413 1.226-.63
+                       a1.4 1.4 0 0 1 .373-.24c-.38-.066-.78-.19-1.115-.38
+                       a2.65 2.65 0 0 1-1.228-2.319c0-.78.28-1.418.737-1.919
+                       a2.576 2.576 0 0 1 .07-1.89s.6-.192 1.967.733A6.843 6.843 0 0 1 7.5 4.9
+                       c.608.003 1.22.082 1.793.24 1.365-.926 1.965-.733 1.965-.733
+                       a2.57 2.57 0 0 1 .07 1.89c.458.5.736 1.138.736 1.919
+                       a2.651 2.651 0 0 1-1.227 2.32c-.336.19-.736.313-1.116.38
+                       .186.16.353.477.353.96 0 .695-.006 1.254-.006 1.425
+                       0 .173.118.376.447.312A6.5 6.5 0 0 0 7.5 1z"
+                    fill="currentColor"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="resume.pdf" class="footer-link" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <path d="M3 1h7l3 3v10H3V1z" stroke="currentColor" stroke-width="1.25"
+                    stroke-linejoin="round"/>
+              <path d="M10 1v3h3M5 6h5M5 8.5h5M5 11h3"
+                    stroke="currentColor" stroke-width="1.25"
+                    stroke-linecap="round"/>
+            </svg>
+            Resume
+          </a>
+        </div>
+
+        <p class="footer-credit">
+          &copy; 2026 Abigail Schidler &nbsp;&middot;&nbsp; Built by hand
+        </p>
+      </div>
+    </footer>
+
   </body>
 </html>
