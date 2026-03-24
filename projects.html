@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects — Abigail Schidler</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/theme.js"></script>
   </head>
   <body>
 
@@ -17,6 +18,7 @@
           <li><a href="composing.html">Music</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
+        <button class="theme-toggle" aria-label="Switch to dark mode"></button>
       </div>
     </nav>
 
@@ -25,7 +27,7 @@
         <p class="section-label">Work</p>
         <h1>Projects</h1>
         <p class="page-intro">
-          A collection of things I've built — focused on human-AI interaction,
+          A catalog of things I've built — focused on human-AI interaction,
           NLP, and tools that help people learn and create.
         </p>
       </div>
@@ -34,16 +36,18 @@
     <div class="page-content">
       <div class="container">
 
-        <!-- Featured -->
+        <!-- ── Featured ───────────────────────────────────────── -->
         <div class="projects-grid">
 
-          <article class="project-card" data-project="paperflow">
+          <article class="project-card">
             <div class="project-card__thumbnail">
-              <img src="assets/images/project-thumbnails/paperflow.png" alt="Paperflow screenshot" />
+              <img src="assets/images/project-thumbnails/paperflow.png" alt="Paperflow interface" />
             </div>
             <div class="project-name">Paperflow</div>
             <p class="project-blurb">
-              Paperflow is an LLM-assisted research presentation workspace that transforms academic papers into structured presentation timelines with aligned talking points and speaker notes. It combines automated content extraction with interactive editing tools so users can quickly generate presentations while maintaining control over structure, timing, and narrative flow.
+              An LLM-assisted workspace that transforms academic papers into
+              structured presentation timelines — with talking points, speaker
+              notes, and interactive editing.
             </p>
             <div class="tag-group">
               <span class="tag">React</span>
@@ -57,18 +61,20 @@
             </div>
           </article>
 
-          <article class="project-card" data-project="smart-cart">
+          <article class="project-card">
             <div class="project-card__thumbnail">
-              <img src="assets/images/project-thumbnails/smart-cart.png" alt="Smart Cart screenshot" />
+              <img src="assets/images/project-thumbnails/smart-cart.png" alt="Smart Cart interface" style="object-position: top center; aspect-ratio: 4/3;" />
             </div>
             <div class="project-name">Smart Cart</div>
             <p class="project-blurb">
-              Smart Cart is a mobile meal-planning and grocery aggregation app that helps users turn recipes into structured shopping lists with normalized ingredient quantities and nearby store discovery. It streamlines planning, list building, and shopping into a single workflow-driven interface.
+              A mobile meal-planning app that turns recipes into consolidated
+              grocery lists with normalized quantities and location-aware
+              store discovery.
             </p>
             <div class="tag-group">
               <span class="tag">Flutter</span>
               <span class="tag">Isar Database</span>
-              <span class="tag">Ingredient Aggregation Logic</span>
+              <span class="tag">Ingredient Aggregation</span>
               <span class="tag">GPS Integration</span>
             </div>
             <div class="project-links">
@@ -79,47 +85,57 @@
 
         </div>
 
-        <!-- Additional projects -->
+        <!-- ── Earlier work ───────────────────────────────────── -->
         <div class="projects-secondary">
           <p class="section-label">Earlier work</p>
-          <h2 class="section-title">Additional Projects</h2>
+          <h2 class="section-title">More Projects</h2>
           <p class="section-description">
-            Earlier coursework and supporting projects exploring frontend
-            interaction and interface design.
+            Earlier coursework and experiments in frontend interaction,
+            AI tooling, and interface design.
           </p>
 
           <div class="supporting-grid">
 
             <article class="project-card project-card--supporting">
-              <div class="project-name">Fillerbuster</div>
+              <img
+                class="project-card__logo"
+                src="assets/images/icons/fillerbuster.png"
+                alt="FillerBuster logo"
+              />
+              <div class="project-name">FillerBuster</div>
               <p class="project-blurb">
-                An AI-assisted filler word detector that highlights filler
-                words in a generated transcript from a recording.
+                A speech-practice tool that transcribes recordings and
+                highlights filler words in context, with explanations for
+                why each phrase was flagged.
               </p>
               <div class="tag-group">
-                <span class="tag">React</span>
-                <span class="tag">JavaScript</span>
                 <span class="tag">Next.js</span>
+                <span class="tag">Gemini API</span>
+                <span class="tag">Supabase</span>
               </div>
               <div class="project-links">
-                <a href="#" class="btn btn-outline">Live Demo</a>
+                <a href="projects/fillerbuster.html" class="btn btn-outline">View Project</a>
                 <a href="https://github.com/AbigailSchidler/cse481-tech-lab" class="btn btn-outline">GitHub</a>
               </div>
             </article>
 
             <article class="project-card project-card--supporting">
-              <div class="project-name">Party Reservation Website</div>
+              <div class="project-name">Party Reservation Platform</div>
               <p class="project-blurb">
-                A web interface for browsing and reserving event venues, built as
-                a frontend interaction design exercise.
+                A full-stack reservation platform for booking party spaces and
+                activity amenities, with account management, time-slot
+                scheduling, and reservation history.
               </p>
               <div class="tag-group">
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
                 <span class="tag">JavaScript</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">SQLite</span>
               </div>
               <div class="project-links">
-                <a href="#" class="btn btn-outline">Live Demo</a>
+                <a href="projects/party-rental.html" class="btn btn-outline">View Project</a>
                 <a href="https://github.com/AbigailSchidler/party-reservation" class="btn btn-outline">GitHub</a>
               </div>
             </article>
@@ -127,7 +143,7 @@
           </div>
         </div>
 
-        <!-- In progress -->
+        <!-- ── In progress ────────────────────────────────────── -->
         <div class="projects-secondary">
           <p class="section-label">Currently building</p>
           <h2 class="section-title">In Progress</h2>
@@ -154,6 +170,8 @@
         <p class="footer-credit">
           &copy; 2026 Abigail Schidler &nbsp;&middot;&nbsp;
           <a href="index.html">Home</a>
+          &nbsp;&middot;&nbsp;
+          <a href="index.html#contact">Contact</a>
         </p>
       </div>
     </footer>

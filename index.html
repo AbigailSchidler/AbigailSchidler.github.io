@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abigail Schidler</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/theme.js"></script>
   </head>
   <body>
 
@@ -18,6 +19,7 @@
           <li><a href="composing.html">Music</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
+        <button class="theme-toggle" aria-label="Switch to dark mode"></button>
       </div>
     </nav>
 
@@ -31,12 +33,12 @@
             <h1 class="hero-name">Abigail<br>Schidler</h1>
             <p class="hero-role">Computer Science + Music @ University of Washington</p>
             <p class="hero-intro">
-              I'm a UW student pursuing dual degrees in Computer Science and Music,
-              focused on human-AI interaction, NLP, and tools that support learning,
-              research, and creativity.
+              I build tools at the intersection of AI, language, and human
+              experience — focused on making research, learning, and creativity
+              feel more natural.
             </p>
             <div class="hero-actions">
-              <a href="#projects" class="btn btn-primary">View Projects</a>
+              <a href="#work" class="btn btn-primary">View Projects</a>
               <a href="resume.pdf" class="btn btn-outline" target="_blank" rel="noopener">Resume</a>
               <a href="#contact" class="btn btn-outline">Contact</a>
             </div>
@@ -50,7 +52,7 @@
       </div>
     </section>
 
-    <!-- ── Interests ─────────────────────────────────────────── -->
+    <!-- ── Focus areas ───────────────────────────────────────── -->
     <section id="interests">
       <div class="container">
         <p class="section-label">Focus areas</p>
@@ -77,22 +79,26 @@
       </div>
     </section>
 
-    <!-- ── Projects ──────────────────────────────────────────── -->
-    <section id="projects">
+    <!-- ── Selected Work ─────────────────────────────────────── -->
+    <section id="work">
       <div class="container">
         <p class="section-label">Work</p>
         <h2 class="section-title">Selected Projects</h2>
+        <p class="section-intro">
+          Tools built around human-AI interaction, NLP, and accessible design.
+        </p>
 
         <div class="projects-grid">
 
-          <!-- Paperflow -->
-          <article class="project-card" data-project="paperflow">
+          <article class="project-card">
             <div class="project-card__thumbnail">
-              <img src="assets/images/project-thumbnails/paperflow.png" alt="Paperflow screenshot" />
+              <img src="assets/images/project-thumbnails/paperflow.png" alt="Paperflow interface" />
             </div>
             <div class="project-name">Paperflow</div>
             <p class="project-blurb">
-              Paperflow is an LLM-assisted research presentation workspace that transforms academic papers into structured presentation timelines with aligned talking points and speaker notes. It combines automated content extraction with interactive editing tools so users can quickly generate presentations while maintaining control over structure, timing, and narrative flow.
+              An LLM-assisted workspace that transforms academic papers into
+              structured presentation timelines — with talking points, speaker
+              notes, and interactive editing.
             </p>
             <div class="tag-group">
               <span class="tag">React</span>
@@ -106,19 +112,20 @@
             </div>
           </article>
 
-          <!-- Smart Cart -->
-          <article class="project-card" data-project="smart-cart">
+          <article class="project-card">
             <div class="project-card__thumbnail">
-              <img src="assets/images/project-thumbnails/smart-cart.png" alt="Smart Cart screenshot" />
+              <img src="assets/images/project-thumbnails/smart-cart.png" alt="Smart Cart interface" />
             </div>
             <div class="project-name">Smart Cart</div>
             <p class="project-blurb">
-              Smart Cart is a mobile meal-planning and grocery aggregation app that helps users turn recipes into structured shopping lists with normalized ingredient quantities and nearby store discovery. It streamlines planning, list building, and shopping into a single workflow-driven interface.
+              A mobile meal-planning app that turns recipes into consolidated
+              grocery lists with normalized quantities and location-aware
+              store discovery.
             </p>
             <div class="tag-group">
               <span class="tag">Flutter</span>
               <span class="tag">Isar Database</span>
-              <span class="tag">Ingredient Aggregation Logic</span>
+              <span class="tag">Ingredient Aggregation</span>
               <span class="tag">GPS Integration</span>
             </div>
             <div class="project-links">
@@ -128,160 +135,77 @@
           </article>
 
         </div>
-      </div>
-    </section>
 
-    <!-- ── Additional Projects ───────────────────────────────── -->
-    <section id="additional-projects">
-      <div class="container">
-        <p class="section-label">Earlier work</p>
-        <h2 class="section-title">Additional Projects</h2>
-        <p class="section-description">
-          Earlier coursework and supporting projects exploring frontend
-          interaction and interface design.
-        </p>
-
-        <div class="supporting-grid">
-
-          <!-- Fillerbuster -->
-          <article class="project-card project-card--supporting">
-            <div class="project-name">Fillerbuster</div>
-            <p class="project-blurb">
-              An AI-assisted filler word detector that highlights filler
-              words in a generated transcript from a recording.
-            </p>
-            <div class="tag-group">
-              <span class="tag">React</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Next.js</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-outline">Live Demo</a>
-              <a href="https://github.com/AbigailSchidler/cse481-tech-lab" class="btn btn-outline">GitHub</a>
-            </div>
-          </article>
-
-          <!-- Party Reservation Website -->
-          <article class="project-card project-card--supporting">
-            <div class="project-name">Party Reservation Website</div>
-            <p class="project-blurb">
-              A web interface for browsing and reserving event venues, built as
-              a frontend interaction design exercise.
-            </p>
-            <div class="tag-group">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-outline">Live Demo</a>
-              <a href="https://github.com/AbigailSchidler/party-reservation" class="btn btn-outline">GitHub</a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ── In Progress ───────────────────────────────────────── -->
-    <section id="in-progress">
-      <div class="container">
-        <p class="section-label">Currently building</p>
-        <h2 class="section-title">In Progress</h2>
-
-        <div class="supporting-grid">
-
-          <article class="project-card project-card--supporting project-card--wip">
-            <div class="project-name">Productivity App</div>
-            <span class="badge-wip">Currently building MVP</span>
-            <p class="project-blurb">
-              A structured workflow tool exploring task organization and
-              human-centered productivity systems.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ── Courses ────────────────────────────────────────────── -->
-    <section id="courses">
-      <div class="container">
-        <p class="section-label">Education</p>
-        <h2 class="section-title">Courses that shaped how I think</h2>
-
-        <div class="courses-list">
-
-          <div class="course-item">
-            <span class="course-num">01</span>
-            <div>
-              <div class="course-name">Human-AI Interaction Capstone</div>
-              <p class="course-note">
-                Pushed me to think about AI not as a product feature but as a
-                design material — where trust, transparency, and agency matter as
-                much as accuracy.
-              </p>
-            </div>
+        <!-- Compact secondary projects row -->
+        <div class="work-also">
+          <span class="work-also__label">Also built</span>
+          <div class="work-also__links">
+            <a href="projects/fillerbuster.html" class="work-also__link">FillerBuster</a>
+            <span class="work-also__sep" aria-hidden="true">·</span>
+            <a href="projects/party-rental.html" class="work-also__link">Party Reservation Platform</a>
+            <span class="work-also__sep" aria-hidden="true">·</span>
+            <span class="work-also__link" style="color: var(--color-muted);">
+              Productivity App <span class="badge-wip">In progress</span>
+            </span>
           </div>
-
-          <div class="course-item">
-            <span class="course-num">02</span>
-            <div>
-              <div class="course-name">Interaction Programming</div>
-              <p class="course-note">
-                Taught me to prototype quickly and test assumptions early —
-                a habit that now shapes every project from day one.
-              </p>
-            </div>
-          </div>
-
-          <div class="course-item">
-            <span class="course-num">03</span>
-            <div>
-              <div class="course-name">Data Structures &amp; Algorithms</div>
-              <p class="course-note">
-                Grounded my intuition for when elegance and efficiency actually
-                matter, and when clarity should win instead.
-              </p>
-            </div>
-          </div>
-
         </div>
 
-        <a href="courses.html" class="btn btn-ghost">
-          See all courses
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-    </section>
-
-    <!-- ── Music ─────────────────────────────────────────────── -->
-    <section id="music">
-      <div class="container">
-        <p class="section-label">Creative practice</p>
-        <h2 class="section-title">Music &amp; Composition</h2>
-
-        <div class="music-inner">
-          <p>
-            Composition is a growing part of how I think and create. I approach
-            music the way I approach software: iteratively, with close attention
-            to structure and intuition about when to break the rules.
-          </p>
-          <p>
-            This section will grow to include original works, analytical
-            writing, and projects that sit at the intersection of music and
-            technology.
-          </p>
-          <a href="composing.html" class="btn btn-ghost">
-            Visit Composing
+        <div style="margin-top: 2rem;">
+          <a href="projects.html" class="btn btn-ghost">
+            View all projects
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
               <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"
                     stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Elsewhere ─────────────────────────────────────────── -->
+    <section id="elsewhere">
+      <div class="container">
+        <p class="section-label">More</p>
+        <h2 class="section-title">Explore the rest</h2>
+
+        <div class="explore-grid">
+
+          <a href="courses.html" class="explore-card" style="text-decoration:none; color:inherit;">
+            <p class="section-label">Education</p>
+            <div class="explore-card__title">Courses</div>
+            <p class="explore-card__body">
+              Coursework in human-AI interaction, systems, algorithms, and
+              design — including a capstone on AI as a design material and
+              upcoming coursework in deep learning.
+            </p>
+            <span class="btn btn-ghost" style="align-self: flex-start;">
+              See all courses
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
+          <a href="composing.html" class="explore-card explore-card--music" style="text-decoration:none; color:inherit;">
+            <p class="section-label">Creative practice</p>
+            <div class="explore-card__title">Music &amp; Composition</div>
+            <p class="explore-card__body">
+              Composition as a parallel creative practice — iterative,
+              structural, and occasionally willing to break the rules. This
+              space will grow to include original works and music-technology
+              projects.
+            </p>
+            <span class="btn btn-ghost" style="align-self: flex-start;">
+              Visit Composing
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
         </div>
       </div>
     </section>

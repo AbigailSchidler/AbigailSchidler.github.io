@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Courses — Abigail Schidler</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/theme.js"></script>
   </head>
   <body>
 
@@ -17,6 +18,7 @@
           <li><a href="composing.html">Music</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
+        <button class="theme-toggle" aria-label="Switch to dark mode"></button>
       </div>
     </nav>
 
@@ -26,13 +28,21 @@
         <h1>Courses</h1>
         <p class="page-intro">
           Coursework that shaped how I think about design, systems, and the
-          relationship between technology and people.
+          relationship between technology and people — not just what I know,
+          but how I approach problems.
         </p>
       </div>
     </div>
 
     <div class="page-content">
       <div class="container">
+
+        <!-- ── Human-centered computing ──────────────────────── -->
+        <div style="margin-bottom: 1.5rem;">
+          <p class="section-label">Human-centered computing</p>
+          <h2 class="section-title" style="margin-bottom: 2rem;">Design &amp; Interaction</h2>
+        </div>
+
         <div class="courses-list">
 
           <div class="course-item">
@@ -52,13 +62,13 @@
                   <div class="paper-title">Proactive Conversational Agents with Inner Thoughts</div>
                   <div class="paper-authors">
                     Xingyu Bruce Liu, Shitao Fang, Weiyan Shi, Chien-Sheng Wu,
-                    Takeo Igarashi, Xiang ‘Anthony’ Chen 2025
+                    Takeo Igarashi, Xiang 'Anthony' Chen 2025
                   </div>
                   <p class="paper-takeaway">
-                    This paper explored how intrinsically motivated “inner thoughts”
-                    can help conversational agents contribute proactively instead of waiting
-                    for prompts, which changed how I think about designing AI systems as
-                    active collaborators rather than passive tools.
+                    Explored how intrinsically motivated "inner thoughts" can help
+                    conversational agents contribute proactively instead of waiting
+                    for prompts — changing how I think about AI as an active
+                    collaborator rather than a passive tool.
                   </p>
                 </div>
 
@@ -74,11 +84,11 @@
                     Julie A. Kientz 2025
                   </div>
                   <p class="paper-takeaway">
-                    This paper examined how bias and representation gaps
-                    affect AI-supported speech-language tools for culturally and linguistically
-                    diverse children, reinforcing the importance of careful prompting and
-                    source verification, which is an approach I later incorporated into Paperflow by
-                    linking generated content back to its original sections.
+                    Examined how bias and representation gaps affect AI-supported
+                    tools for culturally and linguistically diverse children —
+                    reinforcing the importance of source verification, an approach
+                    I later incorporated into Paperflow by linking generated content
+                    back to its source sections.
                   </p>
                 </div>
 
@@ -97,28 +107,36 @@
             </div>
           </div>
 
-          <div class="course-item">
-            <span class="course-num">03</span>
-            <div>
-              <div class="course-name">Data Structures &amp; Algorithms</div>
-              <p class="course-note">
-                Grounded my intuition for when elegance and efficiency actually
-                matter, and when clarity should win instead.
-              </p>
-            </div>
-          </div>
-
-          <!-- Add more courses here -->
-
         </div>
 
-        <!-- Upcoming coursework -->
+        <!-- ── Computer science foundations ──────────────────── -->
+        <div class="projects-secondary">
+          <p class="section-label">Computer science foundations</p>
+          <h2 class="section-title" style="margin-bottom: 2rem;">Systems &amp; Algorithms</h2>
+
+          <div class="courses-list">
+
+            <div class="course-item">
+              <span class="course-num">03</span>
+              <div>
+                <div class="course-name">Data Structures &amp; Algorithms</div>
+                <p class="course-note">
+                  Grounded my intuition for when elegance and efficiency actually
+                  matter, and when clarity should win instead.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── Upcoming coursework ────────────────────────────── -->
         <div class="projects-secondary">
           <p class="section-label">Next quarter</p>
-          <h2 class="section-title">Upcoming Coursework</h2>
+          <h2 class="section-title" style="margin-bottom: 2rem;">Upcoming Coursework</h2>
           <p class="section-description">
-            These upcoming courses support my growing interest in human-centered
-            AI systems and intelligent learning tools.
+            Building deeper foundations in AI and machine learning to support
+            work in human-centered intelligent systems.
           </p>
 
           <div class="courses-list">
@@ -128,8 +146,8 @@
               <div>
                 <div class="course-name">Artificial Intelligence <span class="course-code">CSE 473</span></div>
                 <p class="course-note">
-                  Exploring classical AI search, reasoning, and decision-making
-                  methods that support intelligent systems.
+                  Classical AI search, reasoning, and decision-making methods
+                  that support intelligent systems.
                 </p>
               </div>
             </div>
@@ -139,9 +157,8 @@
               <div>
                 <div class="course-name">Deep Learning <span class="course-code">CSE 493G</span></div>
                 <p class="course-note">
-                  Studying neural network architectures and representation
-                  learning with applications to language and structured data
-                  workflows.
+                  Neural network architectures and representation learning with
+                  applications to language and structured data workflows.
                 </p>
               </div>
             </div>
@@ -157,6 +174,8 @@
         <p class="footer-credit">
           &copy; 2026 Abigail Schidler &nbsp;&middot;&nbsp;
           <a href="index.html">Home</a>
+          &nbsp;&middot;&nbsp;
+          <a href="index.html#contact">Contact</a>
         </p>
       </div>
     </footer>

@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fillerbuster — Abigail Schidler</title>
+    <title>FillerBuster — Abigail Schidler</title>
     <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/fillerbuster.css" />
+    <script src="../assets/js/theme.js"></script>
   </head>
   <body>
 
@@ -17,19 +19,40 @@
           <li><a href="../composing.html">Music</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
         </ul>
+        <button class="theme-toggle" aria-label="Switch to dark mode"></button>
       </div>
     </nav>
 
-    <div class="page-hero">
+    <!-- ── Hero ──────────────────────────────────────────────── -->
+    <div class="page-hero fb-hero">
       <div class="container">
         <p class="breadcrumb">
-          <a href="../projects.html">Projects</a> &rsaquo; Fillerbuster
+          <a href="../projects.html">Projects</a> &rsaquo; FillerBuster
         </p>
-        <h1>Fillerbuster</h1>
+        <img
+          class="project-hero-logo"
+          src="../assets/images/icons/fillerbuster.png"
+          alt="FillerBuster logo"
+        />
+        <p class="section-label">Earlier Work</p>
+        <h1>FillerBuster</h1>
         <p class="page-intro">
-          An AI-assisted filler word detector that highlights filler
-          words in a generated transcript from a recording.
+          FillerBuster is a speech-practice tool that analyzes recorded
+          presentations, highlights filler words in context, and helps speakers
+          understand why hesitation language appears in their speech.
         </p>
+        <span class="badge-complete">Prototype complete</span>
+        <div class="tag-group">
+          <span class="tag">Next.js</span>
+          <span class="tag">Gemini API</span>
+          <span class="tag">Supabase</span>
+          <span class="tag">React</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="btn btn-primary">Live Demo</a>
+          <a href="https://github.com/AbigailSchidler/cse481-tech-lab" class="btn btn-outline">GitHub</a>
+        </div>
       </div>
     </div>
 
@@ -37,37 +60,180 @@
       <div class="container">
         <div class="project-detail">
 
-          <div class="tag-group">
-            <span class="tag">React</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Next.js</span>
-          </div>
-
-          <div class="project-links" style="margin-bottom: 2.5rem;">
-            <a href="#" class="btn btn-primary">Live Demo</a>
-            <a href="https://github.com/AbigailSchidler/cse481-tech-lab" class="btn btn-outline">GitHub</a>
-          </div>
-
-          <div class="project-screenshot">
-            <div class="screenshot-placeholder">
-              Screenshot coming soon
+          <!-- ── Quick highlights ─────────────────────────────── -->
+          <div class="project-section">
+            <div class="highlights-grid">
+              <div class="highlight-item">
+                <div class="highlight-label">Problem</div>
+                <div class="highlight-value">Practicing presentations alone makes it difficult to notice filler-word habits or track improvement across rehearsal attempts</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-label">Built with</div>
+                <div class="highlight-value">Next.js, Gemini API, Supabase, structured JSON prompting</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-label">Key design goal</div>
+                <div class="highlight-value">Preserve speaker agency by explaining why words are marked as fillers rather than presenting model output as unquestionable feedback</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-label">Status</div>
+                <div class="highlight-value">Prototype complete</div>
+              </div>
             </div>
           </div>
 
-          <div class="project-section">
-            <h2>Overview</h2>
+          <!-- ── Workflow overview ─────────────────────────────── -->
+          <div class="project-section" id="workflow-overview">
+            <h2>Workflow Overview</h2>
             <p>
-              Add a detailed description of Fillerbuster here — what problem it solves,
-              who it's for, and what makes it interesting.
+              The FillerBuster workflow is designed around iterative rehearsal
+              rather than a single-pass correction. Users upload a recording,
+              receive a verbatim transcript with filler words highlighted in
+              context, and can return to review and compare across multiple
+              saved takes.
+            </p>
+            <p>
+              The pipeline steps are: upload recording &rarr; generate verbatim
+              transcript &rarr; detect contextual filler words &rarr; review
+              highlighted transcript &rarr; compare across saved takes.
+            </p>
+
+            <figure class="project-figure">
+              <a href="#lightbox-homepage">
+                <img
+                  src="../assets/images/project-screenshots/fillerbuster/homepage.png"
+                  alt="Dashboard showing saved rehearsal takes"
+                />
+              </a>
+              <figcaption>Transcript dashboard showing saved rehearsal takes</figcaption>
+            </figure>
+
+            <p>
+              Each saved recording is surfaced from the dashboard as a named
+              take. Selecting a take opens the highlighted transcript view,
+              where filler words are marked inline with contextual annotations
+              explaining why each phrase was flagged.
+            </p>
+
+            <figure class="project-figure">
+              <a href="#lightbox-transcript">
+                <img
+                  src="../assets/images/project-screenshots/fillerbuster/transcript.png"
+                  alt="Transcript with contextual filler-word highlights"
+                />
+              </a>
+              <figcaption>Transcript with contextual filler-word detection</figcaption>
+            </figure>
+          </div>
+
+          <!-- Lightboxes -->
+          <div id="lightbox-homepage" class="lightbox" role="dialog" aria-modal="true" aria-label="Dashboard showing saved rehearsal takes">
+            <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
+            <div class="lightbox-frame">
+              <a href="#workflow-overview" class="lightbox-close" aria-label="Close">&times;</a>
+              <img src="../assets/images/project-screenshots/fillerbuster/homepage.png" alt="Dashboard showing saved rehearsal takes" />
+            </div>
+          </div>
+          <div id="lightbox-transcript" class="lightbox" role="dialog" aria-modal="true" aria-label="Transcript with contextual filler-word highlights">
+            <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
+            <div class="lightbox-frame">
+              <a href="#workflow-overview" class="lightbox-close" aria-label="Close">&times;</a>
+              <img src="../assets/images/project-screenshots/fillerbuster/transcript.png" alt="Transcript with contextual filler-word highlights" />
+            </div>
+          </div>
+
+          <!-- ── Feature story ─────────────────────────────────── -->
+          <div class="project-section fb-section">
+            <h2>Features</h2>
+
+            <h3>Verbatim transcription</h3>
+            <p>
+              Accurate transcripts preserve hesitation language exactly as
+              spoken, so filler words remain visible in the record rather than
+              being cleaned away by normalization.
+            </p>
+
+            <h3>Context-aware filler detection</h3>
+            <p>
+              Words are only flagged when functioning as fillers, not when they
+              carry meaning in context. "Like" in a comparison and "like" as a
+              hesitation marker are treated differently.
+            </p>
+
+            <h3>Explainable feedback</h3>
+            <p>
+              Highlights communicate why words were marked, helping users
+              interpret model decisions rather than accepting them as opaque
+              judgments. This keeps the feedback process transparent and
+              verifiable.
+            </p>
+
+            <h3>Multi-take reflection workflow</h3>
+            <p>
+              Saved recordings allow speakers to review progress across multiple
+              rehearsal attempts, supporting pattern recognition over time
+              rather than single-session correction.
             </p>
           </div>
 
-          <div class="project-section">
-            <h2>How it works</h2>
+          <!-- ── Technical pipeline ────────────────────────────── -->
+          <div class="project-section fb-section">
+            <h2>Technical Pipeline</h2>
             <p>
-              Describe the technical approach, key design decisions, and anything
-              you learned while building it.
+              FillerBuster uses a two-stage LLM workflow. First, uploaded audio
+              is transcribed verbatim using the Gemini API. Then the transcript
+              is passed through Gemini again with structured prompting that
+              returns JSON segments preserving original punctuation while
+              tagging filler phrases and their detection rationale.
             </p>
+            <p>
+              This structured output enables efficient rendering of interactive
+              transcript highlights in the React interface, with each flagged
+              segment carrying the context needed to display its explanation
+              inline.
+            </p>
+          </div>
+
+          <!-- ── Designing transparent feedback ────────────────── -->
+          <div class="project-section fb-section">
+            <h2>Designing Transparent Feedback</h2>
+            <p>
+              Because filler detection depends heavily on context, the interface
+              exposes the reasoning behind each highlighted word rather than
+              treating model output as authoritative. Users see not just which
+              words were flagged, but why — grounding the feedback in the
+              specific phrasing that triggered it.
+            </p>
+            <p>
+              This keeps users in control of the feedback process and supports
+              verification pathways in future scoring workflows, where user
+              confirmation of flagged words could inform accuracy metrics.
+            </p>
+          </div>
+
+          <!-- ── Supporting reflective practice ────────────────── -->
+          <div class="project-section fb-section">
+            <h2>Supporting Reflective Speech Practice</h2>
+            <p>
+              Instead of treating filler detection as a single-pass correction
+              tool, FillerBuster is designed around iterative rehearsal.
+              By preserving transcripts across sessions, the interface helps
+              users recognize patterns in hesitation language — whether fillers
+              cluster at transitions, under time pressure, or in particular
+              topic areas — and track improvement over time.
+            </p>
+          </div>
+
+          <!-- ── Future directions ──────────────────────────────── -->
+          <div class="project-section fb-section">
+            <h2>Future Directions</h2>
+            <p>Possible improvements include:</p>
+            <ul>
+              <li>User verification of flagged filler words to improve model accuracy</li>
+              <li>Progress tracking and trend visualization across sessions</li>
+              <li>Scoring based on accepted corrections over time</li>
+              <li>Expanded analytics for speech pattern recognition</li>
+            </ul>
           </div>
 
         </div>
@@ -78,7 +244,9 @@
       <div class="footer-inner">
         <p class="footer-credit">
           &copy; 2026 Abigail Schidler &nbsp;&middot;&nbsp;
-          <a href="../index.html">Home</a>
+          <a href="../projects.html">Projects</a>
+          &nbsp;&middot;&nbsp;
+          <a href="../index.html#contact">Contact</a>
         </p>
       </div>
     </footer>

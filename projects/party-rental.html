@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Party Rental — Abigail Schidler</title>
+    <title>Party Reservation Platform — Abigail Schidler</title>
     <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="../assets/js/theme.js"></script>
   </head>
   <body>
 
@@ -17,19 +18,35 @@
           <li><a href="../composing.html">Music</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
         </ul>
+        <button class="theme-toggle" aria-label="Switch to dark mode"></button>
       </div>
     </nav>
 
+    <!-- ── Hero ──────────────────────────────────────────────── -->
     <div class="page-hero">
       <div class="container">
         <p class="breadcrumb">
-          <a href="../projects.html">Projects</a> &rsaquo; Party Rental
+          <a href="../projects.html">Projects</a> &rsaquo; Party Reservation Platform
         </p>
-        <h1>Party Rental</h1>
+        <p class="section-label">Earlier Work</p>
+        <h1>Party Reservation Platform</h1>
         <p class="page-intro">
-          A web interface for browsing and reserving event venues, built as
-          a frontend interaction design exercise.
+          A full-stack reservation platform for booking party rooms and
+          activity-based amenities — with account management, time-slot
+          scheduling, and reservation history tracking.
         </p>
+        <div class="tag-group">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Express</span>
+          <span class="tag">SQLite</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="btn btn-primary">Live Demo</a>
+          <a href="https://github.com/AbigailSchidler/party-reservation" class="btn btn-outline">GitHub</a>
+        </div>
       </div>
     </div>
 
@@ -37,36 +54,114 @@
       <div class="container">
         <div class="project-detail">
 
-          <div class="tag-group">
-            <span class="tag">SQLite</span>
-            <span class="tag">DB</span>
-            <span class="tag">Node.js</span>
-          </div>
-
-          <div class="project-links" style="margin-bottom: 2.5rem;">
-            <a href="#" class="btn btn-primary">Live Demo</a>
-            <a href="https://github.com/AbigailSchidler/party-reservation" class="btn btn-outline">GitHub</a>
-          </div>
-
-          <div class="project-screenshot">
-            <div class="screenshot-placeholder">
-              Screenshot coming soon
+          <!-- ── Quick highlights ─────────────────────────────── -->
+          <div class="project-section">
+            <div class="highlights-grid">
+              <div class="highlight-item">
+                <div class="highlight-label">Problem</div>
+                <div class="highlight-value">Event booking sites often separate venue selection, activity add-ons, and scheduling into disconnected workflows</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-label">Built with</div>
+                <div class="highlight-value">HTML, CSS, JavaScript, Node.js, Express, SQLite</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-label">Key design goal</div>
+                <div class="highlight-value">A unified reservation interface combining venue browsing, activity selection, and time-based scheduling</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-label">Status</div>
+                <div class="highlight-value">Completed full-stack prototype</div>
+              </div>
             </div>
           </div>
 
+          <!-- ── Screenshot placeholder ──────────────────────── -->
+          <div class="project-section">
+            <div class="project-screenshot">
+              <div class="screenshot-placeholder">
+                Screenshot coming soon
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Overview ────────────────────────────────────── -->
           <div class="project-section">
             <h2>Overview</h2>
             <p>
-              Add a detailed description of Party Rental here — what problem it solves,
-              who it's for, and what makes it interesting.
+              A full-stack reservation platform for booking party spaces and
+              activity-based amenities — trampolines, bowling lanes, climbing
+              walls, and roller skating. Users browse a central service catalog,
+              explore individual service pages, and reserve time slots through a
+              calendar-based availability interface.
+            </p>
+            <p>
+              Reservations are stored per account and surfaced through a
+              transaction history dashboard, giving users a persistent record of
+              past and upcoming bookings.
             </p>
           </div>
 
+          <!-- ── Workflow ─────────────────────────────────────── -->
           <div class="project-section">
-            <h2>How it works</h2>
+            <h2>Workflow</h2>
             <p>
-              Describe the technical approach, key design decisions, and anything
-              you learned while building it.
+              The booking flow is structured as a linear sequence — each step
+              builds on the previous and narrows the user toward a confirmed
+              reservation:
+            </p>
+            <ol>
+              <li>Browse the service catalog by venue or activity type</li>
+              <li>View individual service detail pages with availability</li>
+              <li>Select a time slot using the scheduling interface</li>
+              <li>Confirm the reservation through the account system</li>
+              <li>Review booking history from the account dashboard</li>
+            </ol>
+          </div>
+
+          <!-- ── Features ─────────────────────────────────────── -->
+          <div class="project-section">
+            <h2>Features</h2>
+            <p>
+              The platform covers the full arc of a reservation workflow —
+              from discovery to confirmation to history:
+            </p>
+            <ul>
+              <li>Service catalog browsing across venue and activity types</li>
+              <li>Time-slot scheduling with calendar-based availability</li>
+              <li>Account-based booking storage and history view</li>
+              <li>Search and availability filtering across services</li>
+              <li>Time-range booking controls</li>
+              <li>Verified-user review system</li>
+            </ul>
+          </div>
+
+          <!-- ── Technical implementation ────────────────────── -->
+          <div class="project-section">
+            <h2>Technical implementation</h2>
+            <p>
+              The backend is built with Node.js and Express, using SQLite for
+              persistent storage of services, accounts, and reservations.
+              Time-slot availability is managed server-side with conflict
+              checking enforced at the database level.
+            </p>
+            <p>
+              The frontend handles search and filter interactions without
+              full-page reloads. The reservation confirmation workflow validates
+              input and updates availability state before persisting the booking
+              to the user's account record.
+            </p>
+          </div>
+
+          <!-- ── Context ──────────────────────────────────────── -->
+          <div class="project-section">
+            <h2>Context</h2>
+            <p>
+              Built as a full-stack interaction design exercise, this project
+              applied frontend layout and interaction principles to a real
+              booking workflow, while also implementing the backend
+              infrastructure needed to support persistent accounts, time-based
+              scheduling, and data retrieval across sessions.
             </p>
           </div>
 
@@ -78,7 +173,9 @@
       <div class="footer-inner">
         <p class="footer-credit">
           &copy; 2026 Abigail Schidler &nbsp;&middot;&nbsp;
-          <a href="../index.html">Home</a>
+          <a href="../projects.html">Projects</a>
+          &nbsp;&middot;&nbsp;
+          <a href="../index.html#contact">Contact</a>
         </p>
       </div>
     </footer>

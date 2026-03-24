@@ -110,3 +110,21 @@
     padding: 1.25rem 1.25rem;
   }
 }
+
+
+/* ── Dark mode ────────────────────────────────────────────────────────────── */
+
+[data-theme="dark"] {
+  --sc-green-deep:   #82bb82;                    /* sage-green lightened for dark bg */
+  --sc-green-tint:   rgba(122, 158, 116, 0.11);  /* slightly more opaque card fill */
+  --sc-green-soft:   rgba(122, 158, 116, 0.16);  /* tag pill */
+  --sc-green-line:   rgba(122, 158, 116, 0.20);  /* borders */
+}
+
+[data-theme="dark"] .sc-hero {
+  background: linear-gradient(
+    140deg,
+    rgba(122, 158, 116, 0.07) 0%,
+    rgba(149, 181, 143, 0.04) 100%
+  );
+}

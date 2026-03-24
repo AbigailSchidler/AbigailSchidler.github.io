@@ -116,3 +116,20 @@
     padding-left: 1rem;
   }
 }
+
+
+/* ── Dark mode ────────────────────────────────────────────────────────────── */
+
+[data-theme="dark"] {
+  --pf-heading:    #82bcd6;                     /* water blue lightened for dark bg */
+  --pf-blue-tint:  rgba(143, 174, 194, 0.06);   /* slightly reduced hero wash */
+  --pf-line:       rgba(143, 174, 194, 0.22);   /* softer section border */
+}
+
+[data-theme="dark"] .pf-hero {
+  background: linear-gradient(
+    140deg,
+    rgba(143, 174, 194, 0.07) 0%,
+    rgba(168, 159, 199, 0.04) 100%
+  );
+}

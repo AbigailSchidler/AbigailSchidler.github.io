@@ -1,0 +1,124 @@
+/* ==========================================================================
+   fillerbuster.css — Project-specific theming for the FillerBuster detail page
+   Scoped entirely to .fb-* classes; does not override global portfolio styles.
+   ========================================================================== */
+
+
+/* ── Palette ──────────────────────────────────────────────────────────────── */
+
+:root {
+  --fb-warm:       #c17c66;                    /* terracotta (matches --color-accent-warm) */
+  --fb-warm-deep:  #9b5a48;                    /* darkened for text — ~4.7:1 on white, WCAG AA */
+  --fb-warm-tint:  rgba(193, 124, 102, 0.07);  /* hero wash */
+  --fb-warm-line:  rgba(193, 124, 102, 0.28);  /* left border */
+}
+
+
+/* ── Hero band ────────────────────────────────────────────────────────────── */
+
+/*
+ * Adds a very subtle warm terracotta gradient wash behind the hero band.
+ * Intentionally lighter than the terracotta used in tag fills so the hero
+ * doesn't read as tinted — just slightly warm.
+ */
+.fb-hero {
+  background: linear-gradient(
+    140deg,
+    rgba(193, 124, 102, 0.07) 0%,
+    rgba(193, 124, 102, 0.04) 100%
+  );
+}
+
+
+/* ── Logo sizing ──────────────────────────────────────────────────────────── */
+
+/*
+ * FillerBuster uses a product logo rather than a small decorative mark.
+ * Override the global .project-hero-logo base (44px) to give the logo
+ * room to read as an identity mark at desktop widths (~64px visible, ~72px
+ * on high-density displays at 1.5× scale).
+ */
+.fb-hero .project-hero-logo {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.25rem;
+}
+
+
+/* ── Section accent panels ────────────────────────────────────────────────── */
+
+/*
+ * .fb-section wraps prose content sections.
+ * A left border in the terracotta accent color gives FillerBuster pages
+ * a distinct identity from Paperflow (blue gradient) and Smart Cart (filled
+ * card) while staying within the same structural vocabulary.
+ */
+.fb-section {
+  position: relative;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--fb-warm-line);
+}
+
+/*
+ * Section headings in the FillerBuster warm-deep color.
+ * #9b5a48 on the page background (~4.8:1) clears WCAG AA at this size.
+ */
+.fb-section h2 {
+  color: var(--fb-warm-deep);
+}
+
+/*
+ * Subsection h3 headings for named feature beats within a section.
+ * Slightly smaller than h2, in the main text color so they read as
+ * sub-items rather than competing section titles.
+ */
+.fb-section h3 {
+  font-size: 0.975rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.fb-section h3:first-of-type {
+  margin-top: 1.25rem;
+}
+
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .fb-hero .project-hero-logo {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fb-hero .project-hero-logo {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.875rem;
+  }
+
+  .fb-section {
+    padding-left: 1rem;
+  }
+}
+
+
+/* ── Dark mode ────────────────────────────────────────────────────────────── */
+
+[data-theme="dark"] {
+  --fb-warm-deep:  #c87e62;                     /* terracotta lightened for dark bg */
+  --fb-warm-tint:  rgba(193, 124, 102, 0.10);   /* slightly stronger hero wash */
+  --fb-warm-line:  rgba(193, 124, 102, 0.24);   /* softer section border */
+}
+
+[data-theme="dark"] .fb-hero {
+  background: linear-gradient(
+    140deg,
+    rgba(193, 124, 102, 0.09) 0%,
+    rgba(193, 124, 102, 0.05) 100%
+  );
+}

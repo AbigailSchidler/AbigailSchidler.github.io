@@ -6,8 +6,9 @@
     <title>Paperflow — Abigail Schidler</title>
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <link rel="stylesheet" href="../assets/css/paperflow.css" />
+    <script src="../assets/js/theme.js"></script>
   </head>
-  <body>
+  <body class="waves-enhanced">
 
     <nav aria-label="Primary navigation">
       <div class="nav-inner">
@@ -18,24 +19,39 @@
           <li><a href="../composing.html">Music</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
         </ul>
+        <button class="theme-toggle" aria-label="Switch to dark mode"></button>
       </div>
     </nav>
 
+    <!-- ── Hero ──────────────────────────────────────────────── -->
     <div class="page-hero pf-hero">
       <div class="container">
+        <p class="breadcrumb">
+          <a href="../projects.html">Projects</a> &rsaquo; Paperflow
+        </p>
         <img
           class="pf-hero-icon"
           src="../assets/images/icons/paperflow-boat.png"
           alt=""
           aria-hidden="true"
         />
-        <p class="breadcrumb">
-          <a href="../projects.html">Projects</a> &rsaquo; Paperflow
-        </p>
+        <p class="section-label">Featured Project</p>
         <h1>Paperflow</h1>
         <p class="page-intro">
-          Paperflow is an LLM-assisted workspace that helps researchers transform dense academic papers into structured presentation flows.
+          An LLM-assisted workspace that helps researchers transform dense
+          academic papers into structured presentation flows — with talking
+          points, speaker notes, and source-linked citations.
         </p>
+        <div class="tag-group">
+          <span class="tag">React</span>
+          <span class="tag">Python</span>
+          <span class="tag">PDF Parsing</span>
+          <span class="tag">Human-AI Interaction</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="btn btn-primary">Live Demo</a>
+          <a href="https://github.com/AbigailSchidler/Paper-Flow" class="btn btn-outline">GitHub</a>
+        </div>
       </div>
     </div>
 
@@ -43,18 +59,29 @@
       <div class="container">
         <div class="project-detail">
 
-          <div class="tag-group" data-project-tags="paperflow">
-            <span class="tag">React</span>
-            <span class="tag">Python</span>
-            <span class="tag">PDF Parsing</span>
-            <span class="tag">Human-AI Interaction</span>
+          <!-- ── Quick highlights ─────────────────────────────── -->
+          <div class="project-section">
+            <div class="highlights-grid">
+              <div class="highlight-item">
+                <div class="highlight-label">Problem</div>
+                <div class="highlight-value">Dense research papers require significant effort to prepare for presentation</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-label">Built with</div>
+                <div class="highlight-value">React, Python, PDFPlumber, Gemini API</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-label">Key design goal</div>
+                <div class="highlight-value">Staged checkpoints that preserve user agency during AI-assisted generation</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-label">Status</div>
+                <div class="highlight-value">Prototype complete</div>
+              </div>
+            </div>
           </div>
 
-          <div class="project-links" style="margin-bottom: 2.5rem;">
-            <a href="#" class="btn btn-primary">Live Demo</a>
-            <a href="https://github.com/AbigailSchidler/Paper-Flow" class="btn btn-outline">GitHub</a>
-          </div>
-
+          <!-- ── Workflow gallery ─────────────────────────────── -->
           <div class="project-section pf-gallery" id="workflow-overview">
             <h2>Workflow Overview</h2>
 
@@ -63,23 +90,18 @@
               <a href="#lightbox-upload" class="gallery-item">
                 <img src="../assets/images/project-screenshots/paperflow/upload.png" alt="Upload interface" />
               </a>
-
               <a href="#lightbox-sections" class="gallery-item">
                 <img src="../assets/images/project-screenshots/paperflow/sections.png" alt="Section structure" />
               </a>
-
               <a href="#lightbox-outline" class="gallery-item">
                 <img src="../assets/images/project-screenshots/paperflow/outline.png" alt="Outline view" />
               </a>
-
               <a href="#lightbox-graph" class="gallery-item">
                 <img src="../assets/images/project-screenshots/paperflow/graph.png" alt="Graph visualization" />
               </a>
-
               <a href="#lightbox-transcript" class="gallery-item">
                 <img src="../assets/images/project-screenshots/paperflow/transcript.png" alt="Transcript display" />
               </a>
-
               <a href="#lightbox-sources" class="gallery-item">
                 <img src="../assets/images/project-screenshots/paperflow/sources.png" alt="Sources and references" />
               </a>
@@ -88,7 +110,6 @@
           </div>
 
           <!-- Lightboxes -->
-
           <div id="lightbox-upload" class="lightbox" role="dialog" aria-modal="true" aria-label="Upload interface">
             <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
             <div class="lightbox-frame">
@@ -96,7 +117,6 @@
               <img src="../assets/images/project-screenshots/paperflow/upload.png" alt="Upload interface" />
             </div>
           </div>
-
           <div id="lightbox-sections" class="lightbox" role="dialog" aria-modal="true" aria-label="Section structure">
             <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
             <div class="lightbox-frame">
@@ -104,7 +124,6 @@
               <img src="../assets/images/project-screenshots/paperflow/sections.png" alt="Section structure" />
             </div>
           </div>
-
           <div id="lightbox-outline" class="lightbox" role="dialog" aria-modal="true" aria-label="Outline view">
             <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
             <div class="lightbox-frame">
@@ -112,7 +131,6 @@
               <img src="../assets/images/project-screenshots/paperflow/outline.png" alt="Outline view" />
             </div>
           </div>
-
           <div id="lightbox-graph" class="lightbox" role="dialog" aria-modal="true" aria-label="Graph visualization">
             <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
             <div class="lightbox-frame">
@@ -120,7 +138,6 @@
               <img src="../assets/images/project-screenshots/paperflow/graph.png" alt="Graph visualization" />
             </div>
           </div>
-
           <div id="lightbox-transcript" class="lightbox" role="dialog" aria-modal="true" aria-label="Transcript display">
             <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
             <div class="lightbox-frame">
@@ -128,7 +145,6 @@
               <img src="../assets/images/project-screenshots/paperflow/transcript.png" alt="Transcript display" />
             </div>
           </div>
-
           <div id="lightbox-sources" class="lightbox" role="dialog" aria-modal="true" aria-label="Sources and references">
             <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
             <div class="lightbox-frame">
@@ -137,20 +153,59 @@
             </div>
           </div>
 
+          <!-- ── Overview ────────────────────────────────────── -->
           <div class="project-section pf-section">
             <h2>Overview</h2>
             <p>
-              Paperflow is an LLM-assisted workspace that helps researchers transform dense academic papers into structured presentation flows. Users upload a PDF and specify constraints like audience level and presentation length, and Paperflow generates a timeline-based outline with aligned talking points and speaker notes. By combining automated content extraction with interactive editing tools, the system supports rapid presentation preparation while keeping users in control of the final narrative.
+              Paperflow is an LLM-assisted workspace that helps researchers
+              transform dense academic papers into structured presentation
+              flows. Users upload a PDF and specify constraints like audience
+              level and presentation length — Paperflow generates a
+              timeline-based outline with aligned talking points and speaker
+              notes.
+            </p>
+            <p>
+              By combining automated content extraction with interactive
+              editing tools, the system supports rapid presentation
+              preparation while keeping users in control of the final
+              narrative.
             </p>
           </div>
 
+          <!-- ── How it works ────────────────────────────────── -->
           <div class="project-section pf-section">
             <h2>How it works</h2>
             <p>
-              Paperflow uses a modular pipeline that combines PDF structure extraction with staged LLM generation to support iterative human-AI collaboration. After parsing a paper into sections using PDFPlumber, Gemini generates candidate presentation structure, slide titles, and talking points, which users review and refine before transcript generation. The interface represents presentation flow as editable timeline nodes that can be reordered, expanded, or annotated with Markdown, enabling spatial reasoning about structure while preserving transparency through source-linked citations for each generated talking point.
+              Paperflow uses a modular pipeline that combines PDF structure
+              extraction with staged LLM generation. After parsing a paper
+              into sections using PDFPlumber, Gemini generates candidate
+              presentation structure, slide titles, and talking points.
+              Users review and refine these before transcript generation.
             </p>
             <p>
-              A key design goal of Paperflow was maintaining user agency during AI-assisted generation. Instead of producing a fixed slide deck automatically, the system introduces structured checkpoints where users review parsed sections, approve outlines, adjust timing constraints, and regenerate transcripts with targeted feedback. This staged interaction model improves trust, reduces downstream correction effort, and supports flexible adaptation of research content for different audiences and presentation formats.
+              The interface represents presentation flow as editable timeline
+              nodes that can be reordered, expanded, or annotated with
+              Markdown — enabling spatial reasoning about structure while
+              preserving transparency through source-linked citations for
+              each generated talking point.
+            </p>
+          </div>
+
+          <!-- ── Design decisions ────────────────────────────── -->
+          <div class="project-section pf-section">
+            <h2>Design decisions</h2>
+            <p>
+              A key goal was maintaining user agency throughout AI-assisted
+              generation. Instead of producing a fixed slide deck
+              automatically, Paperflow introduces structured checkpoints
+              where users review parsed sections, approve outlines, adjust
+              timing constraints, and regenerate transcripts with targeted
+              feedback.
+            </p>
+            <p>
+              This staged interaction model improves trust, reduces
+              downstream correction effort, and supports flexible adaptation
+              of research content for different audiences and formats.
             </p>
           </div>
 
@@ -162,7 +217,9 @@
       <div class="footer-inner">
         <p class="footer-credit">
           &copy; 2026 Abigail Schidler &nbsp;&middot;&nbsp;
-          <a href="../index.html">Home</a>
+          <a href="../projects.html">Projects</a>
+          &nbsp;&middot;&nbsp;
+          <a href="../index.html#contact">Contact</a>
         </p>
       </div>
     </footer>

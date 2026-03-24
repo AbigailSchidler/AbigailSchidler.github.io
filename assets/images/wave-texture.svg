@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <!--
+    Soft wave texture — Abigail Schidler portfolio
+    Five thin ribbon-wave bands at staggered heights.
+    Fill-opacity is the primary opacity control (4–4.5%),
+    kept this low to stay below the 6% cap and preserve
+    full readability on all page backgrounds.
+    Colors: sage green and water blue from the site palette.
+  -->
+
+  <!-- Wave 1 — sage, near top -->
+  <path
+    fill="rgb(124,154,139)"
+    fill-opacity="0.045"
+    d="M-100,52 C240,18 480,88 720,52
+       C960,18 1200,88 1540,52
+       L1540,94
+       C1200,130 960,58 720,94
+       C480,130 240,56 -100,94 Z"
+  />
+
+  <!-- Wave 2 — water blue, upper-mid -->
+  <path
+    fill="rgb(143,174,194)"
+    fill-opacity="0.032"
+    d="M-100,238 C180,193 440,280 720,238
+       C1000,196 1270,274 1540,238
+       L1540,278
+       C1270,314 1000,236 720,278
+       C440,318 180,230 -100,278 Z"
+  />
+
+  <!-- Wave 3 — sage, center -->
+  <path
+    fill="rgb(124,154,139)"
+    fill-opacity="0.038"
+    d="M-100,422 C300,377 600,467 900,422
+       C1100,390 1320,453 1540,422
+       L1540,462
+       C1320,493 1100,430 900,462
+       C600,507 300,416 -100,462 Z"
+  />
+
+  <!-- Wave 4 — water blue, lower-mid -->
+  <path
+    fill="rgb(143,174,194)"
+    fill-opacity="0.028"
+    d="M-100,610 C240,564 540,656 840,610
+       C1080,571 1300,647 1540,610
+       L1540,650
+       C1300,687 1080,611 840,650
+       C540,692 240,602 -100,650 Z"
+  />
+
+  <!-- Wave 5 — sage, bottom -->
+  <path
+    fill="rgb(124,154,139)"
+    fill-opacity="0.04"
+    d="M-100,802 C360,755 720,850 1080,802
+       C1260,778 1410,826 1540,802
+       L1540,900 L-100,900 Z"
+  />
+</svg>

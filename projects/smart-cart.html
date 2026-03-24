@@ -6,6 +6,7 @@
     <title>Smart Cart — Abigail Schidler</title>
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <link rel="stylesheet" href="../assets/css/smart-cart.css" />
+    <script src="../assets/js/theme.js"></script>
   </head>
   <body>
 
@@ -18,18 +19,33 @@
           <li><a href="../composing.html">Music</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
         </ul>
+        <button class="theme-toggle" aria-label="Switch to dark mode"></button>
       </div>
     </nav>
 
+    <!-- ── Hero ──────────────────────────────────────────────── -->
     <div class="page-hero sc-hero">
       <div class="container">
         <p class="breadcrumb">
           <a href="../projects.html">Projects</a> &rsaquo; Smart Cart
         </p>
+        <p class="section-label">Featured Project</p>
         <h1>Smart Cart</h1>
         <p class="page-intro">
-          A Flutter-based mobile app that turns recipes into consolidated grocery lists with normalized quantities and location-aware store discovery.
+          A Flutter-based mobile app that turns recipes into consolidated
+          grocery lists with normalized quantities and location-aware
+          store discovery.
         </p>
+        <div class="tag-group">
+          <span class="tag">Flutter</span>
+          <span class="tag">Isar Database</span>
+          <span class="tag">Ingredient Aggregation</span>
+          <span class="tag">GPS Integration</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="btn btn-primary">Live Demo</a>
+          <a href="https://github.com/AbigailSchidler/Smart-Cart" class="btn btn-outline">GitHub</a>
+        </div>
       </div>
     </div>
 
@@ -37,18 +53,29 @@
       <div class="container">
         <div class="project-detail">
 
-          <div class="tag-group sc-tags" data-project-tags="smart-cart">
-            <span class="tag">Flutter</span>
-            <span class="tag">Isar Database</span>
-            <span class="tag">Ingredient Aggregation Logic</span>
-            <span class="tag">GPS Integration</span>
+          <!-- ── Quick highlights ─────────────────────────────── -->
+          <div class="project-section">
+            <div class="highlights-grid">
+              <div class="highlight-item">
+                <div class="highlight-label">Problem</div>
+                <div class="highlight-value">Turning multiple recipes into a single organized shopping trip requires tedious manual work</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-label">Built with</div>
+                <div class="highlight-value">Flutter, Dart, Isar Database, OpenStreetMap</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-label">SUS score</div>
+                <div class="highlight-value">84.2 — strong usability across 9 participants</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-label">Status</div>
+                <div class="highlight-value">Complete — usability tested</div>
+              </div>
+            </div>
           </div>
 
-          <div class="project-links" style="margin-bottom: 2.5rem;">
-            <a href="#" class="btn btn-primary">Live Demo</a>
-            <a href="https://github.com/AbigailSchidler/Smart-Cart" class="btn btn-outline">GitHub</a>
-          </div>
-
+          <!-- ── Workflow gallery ─────────────────────────────── -->
           <div class="project-section sc-gallery" id="workflow-overview">
             <h2>Workflow Overview</h2>
 
@@ -57,31 +84,24 @@
               <a href="#lightbox-meals-home" class="gallery-item">
                 <img src="../assets/images/project-screenshots/smart-cart/meals-home.png" alt="Meals home screen" />
               </a>
-
               <a href="#lightbox-new-meal" class="gallery-item">
                 <img src="../assets/images/project-screenshots/smart-cart/new-meal.png" alt="New meal creation" />
               </a>
-
               <a href="#lightbox-ingredient-search" class="gallery-item">
                 <img src="../assets/images/project-screenshots/smart-cart/ingredient-search.png" alt="Ingredient search" />
               </a>
-
               <a href="#lightbox-unit-select" class="gallery-item">
                 <img src="../assets/images/project-screenshots/smart-cart/unit-select.png" alt="Unit selection" />
               </a>
-
               <a href="#lightbox-unit-convert" class="gallery-item">
                 <img src="../assets/images/project-screenshots/smart-cart/unit-convert.png" alt="Unit conversion" />
               </a>
-
               <a href="#lightbox-groceries" class="gallery-item">
                 <img src="../assets/images/project-screenshots/smart-cart/groceries.png" alt="Grocery list" />
               </a>
-
               <a href="#lightbox-current-meals" class="gallery-item">
                 <img src="../assets/images/project-screenshots/smart-cart/current-meals.png" alt="Current meals view" />
               </a>
-
               <a href="#lightbox-map" class="gallery-item">
                 <img src="../assets/images/project-screenshots/smart-cart/map.png" alt="Store map" />
               </a>
@@ -90,7 +110,6 @@
           </div>
 
           <!-- Lightboxes -->
-
           <div id="lightbox-meals-home" class="lightbox" role="dialog" aria-modal="true" aria-label="Meals home screen">
             <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
             <div class="lightbox-frame">
@@ -98,7 +117,6 @@
               <img src="../assets/images/project-screenshots/smart-cart/meals-home.png" alt="Meals home screen" />
             </div>
           </div>
-
           <div id="lightbox-new-meal" class="lightbox" role="dialog" aria-modal="true" aria-label="New meal creation">
             <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
             <div class="lightbox-frame">
@@ -106,7 +124,6 @@
               <img src="../assets/images/project-screenshots/smart-cart/new-meal.png" alt="New meal creation" />
             </div>
           </div>
-
           <div id="lightbox-ingredient-search" class="lightbox" role="dialog" aria-modal="true" aria-label="Ingredient search">
             <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
             <div class="lightbox-frame">
@@ -114,7 +131,6 @@
               <img src="../assets/images/project-screenshots/smart-cart/ingredient-search.png" alt="Ingredient search" />
             </div>
           </div>
-
           <div id="lightbox-unit-select" class="lightbox" role="dialog" aria-modal="true" aria-label="Unit selection">
             <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
             <div class="lightbox-frame">
@@ -122,7 +138,6 @@
               <img src="../assets/images/project-screenshots/smart-cart/unit-select.png" alt="Unit selection" />
             </div>
           </div>
-
           <div id="lightbox-unit-convert" class="lightbox" role="dialog" aria-modal="true" aria-label="Unit conversion">
             <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
             <div class="lightbox-frame">
@@ -130,7 +145,6 @@
               <img src="../assets/images/project-screenshots/smart-cart/unit-convert.png" alt="Unit conversion" />
             </div>
           </div>
-
           <div id="lightbox-groceries" class="lightbox" role="dialog" aria-modal="true" aria-label="Grocery list">
             <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
             <div class="lightbox-frame">
@@ -138,7 +152,6 @@
               <img src="../assets/images/project-screenshots/smart-cart/groceries.png" alt="Grocery list" />
             </div>
           </div>
-
           <div id="lightbox-current-meals" class="lightbox" role="dialog" aria-modal="true" aria-label="Current meals view">
             <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
             <div class="lightbox-frame">
@@ -146,7 +159,6 @@
               <img src="../assets/images/project-screenshots/smart-cart/current-meals.png" alt="Current meals view" />
             </div>
           </div>
-
           <div id="lightbox-map" class="lightbox" role="dialog" aria-modal="true" aria-label="Store map">
             <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
             <div class="lightbox-frame">
@@ -155,31 +167,63 @@
             </div>
           </div>
 
+          <!-- ── Overview ────────────────────────────────────── -->
           <div class="project-section sc-section">
             <h2>Overview</h2>
             <p>
-              Smart Cart is a Flutter-based mobile application designed to simplify the process of planning meals and generating grocery lists. The app allows users to create meals, add ingredients with structured quantity and unit support, and automatically aggregate shared ingredients across recipes into a consolidated shopping list. It also integrates location-aware store discovery to help users identify nearby grocery options, reducing the friction between planning meals and completing a shopping trip.
+              Smart Cart simplifies the process of planning meals and building
+              grocery lists. Users create meals by adding ingredients with
+              structured quantity and unit support, and the app automatically
+              aggregates shared ingredients across recipes into a single
+              consolidated shopping list.
+            </p>
+            <p>
+              It also integrates location-aware store discovery to help users
+              find nearby grocery options, reducing friction between planning
+              meals and completing a shopping trip.
             </p>
           </div>
 
+          <!-- ── How it works ────────────────────────────────── -->
           <div class="project-section sc-section">
             <h2>How it works</h2>
             <p>
-              Smart Cart organizes the cooking workflow into three connected steps: meal planning, ingredient normalization, and grocery aggregation. Users create meals by adding ingredients with selectable measurement units such as cups, grams, or teaspoons, which are stored persistently and reused across the app. Ingredients from multiple meals are automatically merged into a unified grocery list, where users can inspect quantities, track usage across recipes, and adjust measurement formats when needed. The system also integrates map-based store discovery to help users locate nearby grocery stores directly from their shopping workflow.
+              Smart Cart organizes the cooking workflow into three connected
+              steps: meal planning, ingredient normalization, and grocery
+              aggregation. Users create meals by adding ingredients with
+              selectable measurement units — stored persistently and reused
+              across the app.
+            </p>
+            <p>
+              Ingredients from multiple meals are automatically merged into a
+              unified grocery list, where users can inspect quantities, track
+              usage across recipes, and adjust measurement formats. Map-based
+              store discovery is integrated directly into the shopping workflow.
             </p>
           </div>
 
+          <!-- ── Technical highlights ────────────────────────── -->
           <div class="project-section sc-section">
             <h2>Technical highlights</h2>
             <p>
-              Smart Cart was implemented using Flutter with persistent local storage through Isar to support structured ingredient tracking and user unit preferences. The app required careful handling of asynchronous loading for large grocery store map datasets and included GPS-based store lookup using OpenStreetMap integration. Additional features included gesture-based navigation, ingredient quantity conversion support, and internationalization-ready unit handling to support flexible measurement workflows across recipes.
+              Built with Flutter and Isar for persistent local storage,
+              supporting structured ingredient tracking and user unit
+              preferences. The app handles asynchronous loading of large
+              grocery store map datasets and includes GPS-based store lookup
+              via OpenStreetMap. Additional features include gesture-based
+              navigation, unit conversion, and internationalization-ready
+              quantity handling.
             </p>
           </div>
 
+          <!-- ── Usability ────────────────────────────────────── -->
           <div class="project-section sc-section">
             <h2>Usability evaluation</h2>
             <p>
-              Smart Cart was evaluated using System Usability Scale (SUS) testing with nine participants and received a score of 84.167, indicating strong usability. The app achieved a usability score of 88.889 and a learnability score of 82.986, demonstrating that users were able to quickly understand and navigate the meal planning workflow.
+              Evaluated using System Usability Scale (SUS) testing with nine
+              participants. Overall score: <strong>84.2</strong> — usability
+              88.9, learnability 83.0. Users were able to navigate the meal
+              planning workflow quickly and without confusion.
             </p>
           </div>
 
@@ -191,7 +235,9 @@
       <div class="footer-inner">
         <p class="footer-credit">
           &copy; 2026 Abigail Schidler &nbsp;&middot;&nbsp;
-          <a href="../index.html">Home</a>
+          <a href="../projects.html">Projects</a>
+          &nbsp;&middot;&nbsp;
+          <a href="../index.html#contact">Contact</a>
         </p>
       </div>
     </footer>

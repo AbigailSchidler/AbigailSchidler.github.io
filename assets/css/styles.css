@@ -16,9 +16,15 @@
    10. Projects
    11. Courses
    12. Music
-   13. Page hero (inner pages)
-   14. Footer
-   15. Responsive
+   13. Project highlights block
+   14. Explore / nav-forward cards (homepage)
+   15. Work-also row (homepage)
+   16. Page hero (inner pages)
+   17. Footer
+   18. Responsive
+   19. Ripple background texture
+   20. Project logo marks
+   21. Dark mode
    ========================================================================== */
 
 
@@ -68,11 +74,13 @@ html {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  background: var(--color-bg);
+  background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.65;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
 }
 
 img {
@@ -111,7 +119,7 @@ h1, h2, h3 {
 }
 
 section {
-  padding: 5rem 0;
+  padding: 6rem 0;
 }
 
 section + section {
@@ -128,10 +136,20 @@ section + section {
 }
 
 h2.section-title {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--color-text);
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Spacious intro paragraph beneath a section heading */
+.section-intro {
+  font-size: 1.05rem;
+  color: var(--color-muted);
+  max-width: 600px;
+  line-height: 1.8;
+  margin-top: -2rem;
+  margin-bottom: 3rem;
 }
 
 
@@ -193,6 +211,38 @@ nav {
 .nav-links a[aria-current="page"] {
   color: var(--color-text);
   font-weight: 500;
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+/* Light mode: show moon (click to go dark) */
+.theme-toggle::after {
+  content: "☾";
+}
+
+/* Dark mode: show sun (click to go light) */
+[data-theme="dark"] .theme-toggle::after {
+  content: "☀";
 }
 
 
@@ -282,14 +332,14 @@ nav {
    ========================================================================== */
 
 #hero {
-  padding: 6rem 0 5rem;
+  padding: 8rem 0 7rem;
   border-top: none;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 340px;
-  gap: 4rem;
+  gap: 5rem;
   align-items: center;
 }
 
@@ -303,34 +353,35 @@ nav {
 }
 
 .hero-name {
-  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-size: clamp(3rem, 6vw, 4.5rem);
   font-weight: 800;
   letter-spacing: -0.03em;
-  line-height: 1.1;
+  line-height: 1.05;
   color: var(--color-text);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .hero-role {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--color-muted);
   font-weight: 400;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .hero-intro {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--color-muted);
   max-width: 520px;
-  line-height: 1.75;
-  margin-bottom: 2rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 1rem;
 }
+
 
 .hero-portrait img {
   width: 100%;
@@ -349,11 +400,11 @@ nav {
 .interests-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .interest-card {
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem 1.75rem;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -390,7 +441,7 @@ nav {
 .project-card {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  padding: 1.75rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -426,21 +477,21 @@ nav {
 
 /* Project detail pages */
 .project-detail {
-  max-width: 720px;
+  max-width: 800px;
 }
 
 .project-detail h1 {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(2rem, 4.5vw, 3rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-bottom: 0.5rem;
 }
 
 .project-detail .lead {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: var(--color-muted);
-  line-height: 1.75;
-  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  margin-bottom: 1.75rem;
 }
 
 .project-detail .tag-group {
@@ -468,9 +519,32 @@ nav {
   font-size: 0.875rem;
 }
 
+/* Inline screenshot figure with caption */
+.project-figure {
+  margin: 2rem 0;
+}
+
+.project-figure img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.project-figure figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+
 /* Project card thumbnail */
 .project-card__thumbnail {
-  margin: -1.75rem -1.75rem 0;
+  margin: -2rem -2rem 0;
   border-radius: var(--radius) var(--radius) 0 0;
   overflow: hidden;
 }
@@ -588,19 +662,40 @@ nav {
 }
 
 .project-section {
-  margin-top: 2.5rem;
+  margin-top: 3.5rem;
 }
 
 .project-section h2 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.875rem;
 }
 
 .project-section p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--color-muted);
-  line-height: 1.75;
+  line-height: 1.8;
+}
+
+.project-section p + p {
+  margin-top: 1rem;
+}
+
+.project-section ul,
+.project-section ol {
+  margin-top: 0.75rem;
+  padding-left: 1.5rem;
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.project-section li {
+  margin-bottom: 0.35rem;
+}
+
+.project-section li:last-child {
+  margin-bottom: 0;
 }
 
 
@@ -692,6 +787,38 @@ nav {
   background: currentColor;
   flex-shrink: 0;
 }
+
+/* Completed badge
+ * Sibling to .badge-wip — same shape and sizing, sage green tones to
+ * signal "done" rather than "in progress."
+ * #4a7a63 on rgba(124,154,139,0.12) clears WCAG AA (~4.8:1).
+ */
+.badge-complete {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #4a7a63;
+  background: rgba(124, 154, 139, 0.12);
+  border: 1px solid rgba(124, 154, 139, 0.35);
+  border-radius: 4px;
+  padding: 0.2rem 0.55rem;
+  margin-top: 0.15rem;
+  width: fit-content;
+}
+
+.badge-complete::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
 
 /* In-progress card variant
  * Inherits project-card--supporting sizing. Dashed border signals
@@ -906,32 +1033,188 @@ nav {
 }
 
 .music-inner {
-  max-width: 640px;
+  max-width: 720px;
   border-left: 3px solid var(--color-accent-blossom);
-  padding-left: 1.5rem;
+  padding-left: 1.75rem;
 }
 
 .music-inner p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--color-muted);
-  line-height: 1.75;
+  line-height: 1.8;
   margin-bottom: 1.5rem;
 }
 
 
 /* ==========================================================================
-   13. Page hero (inner pages)
+   13. Project highlights block
+   ========================================================================== */
+
+/*
+ * Used on project detail pages below the hero.
+ * 3–4 callout items (label + value) in a contained card — gives a quick
+ * at-a-glance summary before the gallery and prose sections.
+ */
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 1.75rem 2rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  margin-bottom: 0; /* lives inside .project-section, which sets its own margin */
+}
+
+.highlight-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.highlight-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.highlight-value {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+
+/* ==========================================================================
+   14. Explore / nav-forward cards (homepage)
+   ========================================================================== */
+
+/*
+ * Used on the homepage to point visitors toward Courses and Music pages.
+ * Two side-by-side cards with a label, heading, body text, and a ghost link.
+ */
+.explore-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.explore-card {
+  padding: 2rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.explore-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.explore-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  margin-top: 0.25rem;
+}
+
+.explore-card__body {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 0.5rem;
+}
+
+/* Music card gets a blossom tint to match the site's music accent */
+.explore-card--music {
+  border-color: rgba(231, 195, 203, 0.55);
+}
+
+.explore-card--music:hover {
+  border-color: var(--color-accent-blossom);
+  transform: translateY(-2px);
+}
+
+.explore-card--music .section-label {
+  color: #a07078;
+}
+
+
+/* ==========================================================================
+   15. Work-also row (homepage)
+   ========================================================================== */
+
+/*
+ * Compact row of secondary/earlier project links that appears below the
+ * featured project cards — signals "there's more" without needing a full
+ * separate section.
+ */
+.work-also {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.work-also__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.work-also__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  align-items: center;
+}
+
+.work-also__link {
+  font-size: 0.875rem;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.work-also__link:hover {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+.work-also__sep {
+  color: var(--color-border);
+  user-select: none;
+}
+
+
+/* ==========================================================================
+   16. Page hero (inner pages)
    ========================================================================== */
 
 .page-hero {
-  padding: 4rem 0 3rem;
+  padding: 6.5rem 0 5.5rem;
   border-bottom: 1px solid var(--color-border);
 }
 
 .page-hero .breadcrumb {
   font-size: 0.8rem;
   color: var(--color-muted);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .page-hero .breadcrumb a {
@@ -944,30 +1227,41 @@ nav {
 }
 
 .page-hero h1 {
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
   font-weight: 800;
   letter-spacing: -0.03em;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.75rem;
 }
 
 .page-hero .page-intro {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--color-muted);
-  max-width: 560px;
-  line-height: 1.75;
+  max-width: 620px;
+  line-height: 1.8;
+  margin-top: 0.5rem;
+}
+
+/* Tag group and links inside page-hero (project detail pages) */
+.page-hero .tag-group {
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.page-hero .project-links {
+  margin-top: 0;
 }
 
 .page-content {
-  padding: 4rem 0;
+  padding: 5rem 0;
 }
 
 
 /* ==========================================================================
-   14. Footer
+   17. Footer
    ========================================================================== */
 
 footer {
-  padding: 4rem 0;
+  padding: 5rem 0;
   border-top: 1px solid var(--color-border);
 }
 
@@ -978,10 +1272,10 @@ footer {
 }
 
 .footer-heading {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .footer-sub {
@@ -1028,7 +1322,7 @@ footer {
 
 
 /* ==========================================================================
-   15. Responsive
+   18. Responsive
    ========================================================================== */
 
 @media (max-width: 640px) {
@@ -1039,7 +1333,11 @@ footer {
 
 @media (max-width: 768px) {
   section {
-    padding: 3.5rem 0;
+    padding: 4rem 0;
+  }
+
+  #hero {
+    padding: 5rem 0 4rem;
   }
 
   .hero-grid {
@@ -1075,7 +1373,7 @@ footer {
   }
 
   h2.section-title {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .projects-grid {
@@ -1091,7 +1389,24 @@ footer {
   }
 
   .page-hero {
-    padding: 2.5rem 0 2rem;
+    padding: 4rem 0 3rem;
+  }
+
+  .section-intro {
+    margin-top: -1.5rem;
+  }
+
+  .explore-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlights-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .work-also {
+    flex-direction: column;
+    gap: 0.875rem;
   }
 }
 
@@ -1108,3 +1423,308 @@ footer {
     padding: 0 1.25rem;
   }
 }
+
+/* ==========================================================================
+   19. Ripple background texture
+   ========================================================================== */
+
+/*
+ * Extremely subtle concentric ring ripples — like a pebble dropped in
+ * still water. Two pseudo-elements carry sparse clusters of rings at
+ * opposite corners; the clusters are partially off-screen so they read
+ * as a soft atmospheric presence rather than a decorative graphic.
+ *
+ * How the stacking works:
+ * body has position:relative but no explicit z-index, so it does NOT
+ * create a stacking context. Its background-color propagates to the
+ * HTML canvas, leaving body's own painted area transparent. The fixed
+ * pseudo-elements at z-index:-1 therefore sit above the canvas color
+ * but below all page content — exactly where we want them.
+ *
+ * Opacity budget:
+ * Individual ring fill values are 1–3.2%. The element-level opacity
+ * adds a further reduction. Net effective opacity per ring is well
+ * below 2% — readable as texture on close inspection, invisible at
+ * a normal reading distance.
+ */
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/*
+ * Two clusters:
+ *  A — upper-left corner (~11% 17%)   three rings, sage green
+ *  B — lower-right corner (~87% 76%)  three rings, sage green, smaller
+ */
+body::before {
+  background:
+    radial-gradient(circle at 11% 17%,
+      transparent 0,
+      transparent 44px,
+      rgba(124, 154, 139, 0.032) 45px,
+      transparent 48px,
+      transparent 82px,
+      rgba(124, 154, 139, 0.022) 83px,
+      transparent 86px,
+      transparent 126px,
+      rgba(124, 154, 139, 0.014) 127px,
+      transparent 130px
+    ),
+    radial-gradient(circle at 87% 76%,
+      transparent 0,
+      transparent 36px,
+      rgba(124, 154, 139, 0.028) 37px,
+      transparent 40px,
+      transparent 70px,
+      rgba(124, 154, 139, 0.018) 71px,
+      transparent 74px,
+      transparent 108px,
+      rgba(124, 154, 139, 0.012) 109px,
+      transparent 112px
+    );
+  opacity: 0.48;
+}
+
+/*
+ * One cluster:
+ *  C — upper-right area (~76% 21%)   three rings, water blue
+ *      Smaller radius, lighter — creates depth without competing
+ *      with the sage green clusters.
+ */
+body::after {
+  background:
+    radial-gradient(circle at 76% 21%,
+      transparent 0,
+      transparent 28px,
+      rgba(143, 174, 194, 0.024) 29px,
+      transparent 32px,
+      transparent 58px,
+      rgba(143, 174, 194, 0.015) 59px,
+      transparent 62px,
+      transparent 90px,
+      rgba(143, 174, 194, 0.009) 91px,
+      transparent 94px
+    );
+  opacity: 0.38;
+}
+
+
+/* ── Enhanced variant (paperflow.html, composing.html) ───────────────────
+ *
+ * Slightly more presence on pages with a stronger atmospheric identity.
+ * No structural changes — only the element-level opacity is raised.
+ * No animation; per design direction the ripples are always static.
+ */
+
+body.waves-enhanced::before {
+  opacity: 0.68;
+}
+
+body.waves-enhanced::after {
+  opacity: 0.52;
+}
+
+
+/* ==========================================================================
+   20. Project logo marks
+   ========================================================================== */
+
+/*
+ * .project-hero-logo
+ *
+ * Product logo shown in the page-hero of detail pages that have a logo asset.
+ * Sized slightly larger than the decorative .pf-hero-icon in paperflow.css
+ * since this carries brand identity rather than decoration.
+ * Falls back gracefully — simply omit the <img> on pages without a logo.
+ */
+.project-hero-logo {
+  display: block;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  margin-bottom: 1.25rem;
+  opacity: 0.85;
+  pointer-events: none;
+  user-select: none;
+}
+
+/*
+ * .project-card__logo
+ *
+ * Small logo mark inside supporting project cards (.project-card--supporting).
+ * Sits above the project name to give logo-bearing projects a subtle identity
+ * marker. Cards without a logo simply omit the element — no gap or fallback
+ * needed.
+ */
+.project-card__logo {
+  display: block;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+  opacity: 0.78;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* ==========================================================================
+   21. Dark mode
+   ==========================================================================
+
+   Color strategy:
+   - Backgrounds → warm espresso / charcoal (warm undertone, not cool grey)
+   - Text → warm off-white (not pure white)
+   - Sage greens → lightened for visibility on dark surfaces
+   - Terracotta → slightly brightened, becomes the primary button emphasis
+   - Borders → translucent warm dark
+   - Ripples → shifted warmer (terracotta-sage) and slightly more opaque
+
+   All values are adjustments of the light-mode palette rather than
+   replacements — the site should feel like the same space under lower,
+   warmer light.
+   ========================================================================== */
+
+[data-theme="dark"] {
+  /* ── Core palette ────────────────────────────────────────── */
+  --color-bg:             #1d1a16;   /* warm espresso */
+  --color-surface:        #252118;   /* warm charcoal for cards/panels */
+  --color-text:           #ede8df;   /* warm off-white */
+  --color-muted:          #9a9388;   /* warm medium tone */
+  --color-border:         #352e26;   /* dark warm separator */
+
+  /* ── Accents — same hues, adjusted luminance ─────────────── */
+  --color-accent:         #8dac9e;   /* sage lightened for dark bg */
+  --color-accent-hover:   #a6c2b0;   /* lighter sage hover */
+
+  --color-accent-warm:    #d4886f;   /* terracotta brightened — primary btn */
+  --color-accent-blossom: #c4909a;   /* blossom at readable saturation */
+  --color-accent-water:   #7ba3be;   /* water blue maintained */
+
+  /* ── Tints — more opacity so they read on dark surfaces ─────── */
+  --color-accent-tint:    rgba(141, 172, 158, 0.14);
+  --color-warm-tint:      rgba(212, 136, 111, 0.18);
+}
+
+
+/* ── Nav background (hardcoded in base; override here) ───────────────────── */
+
+[data-theme="dark"] nav {
+  background: rgba(29, 26, 22, 0.92);
+}
+
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+
+/*
+ * In dark mode the primary button becomes terracotta-forward,
+ * matching the richer, warmer emphasis of the dark palette.
+ */
+[data-theme="dark"] .btn-primary {
+  background: var(--color-accent-warm);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background: #b87258;
+  box-shadow: 0 2px 8px rgba(212, 136, 111, 0.35);
+}
+
+[data-theme="dark"] .btn-outline {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* ── Tags ────────────────────────────────────────────────────────────────── */
+
+[data-theme="dark"] .tag {
+  border-color: rgba(212, 136, 111, 0.35);
+}
+
+
+/* ── Badges ──────────────────────────────────────────────────────────────── */
+
+[data-theme="dark"] .badge-wip {
+  color: #7ab8d4;
+  background: rgba(100, 155, 185, 0.14);
+  border-color: rgba(100, 155, 185, 0.30);
+}
+
+[data-theme="dark"] .badge-complete {
+  color: #78c49e;
+  background: rgba(100, 165, 135, 0.14);
+  border-color: rgba(100, 165, 135, 0.30);
+}
+
+
+/* ── Project card WIP border ─────────────────────────────────────────────── */
+
+[data-theme="dark"] .project-card--wip {
+  border-color: rgba(125, 155, 180, 0.30);
+}
+
+
+/* ── Ripples — shifted warmer in dark mode ───────────────────────────────── */
+
+/*
+ * Replaces the sage / water-blue ring colors with a warm terracotta-sage
+ * mix that reads as a gentle amber glow. Opacity bumped slightly because
+ * dark surfaces can carry a touch more contrast without feeling busy.
+ */
+[data-theme="dark"] body::before {
+  background:
+    radial-gradient(circle at 11% 17%,
+      transparent 0,
+      transparent 44px,
+      rgba(180, 125, 95, 0.048) 45px,
+      transparent 48px,
+      transparent 82px,
+      rgba(180, 125, 95, 0.032) 83px,
+      transparent 86px,
+      transparent 126px,
+      rgba(180, 125, 95, 0.020) 127px,
+      transparent 130px
+    ),
+    radial-gradient(circle at 87% 76%,
+      transparent 0,
+      transparent 36px,
+      rgba(180, 125, 95, 0.040) 37px,
+      transparent 40px,
+      transparent 70px,
+      rgba(180, 125, 95, 0.026) 71px,
+      transparent 74px,
+      transparent 108px,
+      rgba(180, 125, 95, 0.016) 109px,
+      transparent 112px
+    );
+  opacity: 0.55;
+}
+
+[data-theme="dark"] body::after {
+  background:
+    radial-gradient(circle at 76% 21%,
+      transparent 0,
+      transparent 28px,
+      rgba(125, 150, 170, 0.038) 29px,
+      transparent 32px,
+      transparent 58px,
+      rgba(125, 150, 170, 0.024) 59px,
+      transparent 62px,
+      transparent 90px,
+      rgba(125, 150, 170, 0.014) 91px,
+      transparent 94px
+    );
+  opacity: 0.45;
+}
+
+[data-theme="dark"] body.waves-enhanced::before { opacity: 0.75; }
+[data-theme="dark"] body.waves-enhanced::after  { opacity: 0.60; }

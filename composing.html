@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music &amp; Composition — Abigail Schidler</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/theme.js"></script>
   </head>
-  <body>
+  <body class="waves-enhanced">
 
     <nav aria-label="Primary navigation">
       <div class="nav-inner">
@@ -17,29 +18,80 @@
           <li><a href="composing.html" aria-current="page">Music</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
+        <button class="theme-toggle" aria-label="Switch to dark mode"></button>
       </div>
     </nav>
 
-    <div class="page-hero">
+    <div class="page-hero" style="background: linear-gradient(140deg, rgba(231,195,203,0.08) 0%, rgba(160,112,120,0.04) 100%);">
       <div class="container">
-        <p class="section-label">Creative practice</p>
+        <p class="section-label" style="color: #a07078;">Creative practice</p>
         <h1>Music &amp; Composition</h1>
         <p class="page-intro">
-          Composition is a growing part of how I think and create — iterative,
-          structural, and occasionally willing to break the rules.
+          Composing is a different kind of thinking — structural and intuitive
+          at the same time. It's where I explore ideas that don't fit neatly
+          into code.
         </p>
       </div>
     </div>
 
     <div class="page-content">
       <div class="container">
-        <div class="music-inner">
+
+        <!-- ── About this practice ───────────────────────────── -->
+        <div class="music-inner" style="margin-bottom: 4rem;">
           <p>
-            This page will grow to include original compositions, analytical
-            writing, and projects that sit at the intersection of music and
-            technology. Check back soon.
+            I approach music the way I approach software: iteratively, with
+            close attention to structure, and with intuition about when the
+            rules serve the work and when they don't. The two practices
+            reinforce each other more than I expected.
+          </p>
+          <p>
+            Right now this page is early. I'm working on adding original
+            compositions, analytical writing, and projects that sit at the
+            intersection of music and technology.
           </p>
         </div>
+
+        <!-- ── Original compositions ─────────────────────────── -->
+        <div class="projects-secondary" style="border-top: 1px solid var(--color-border); padding-top: 3rem; margin-top: 0;">
+          <p class="section-label" style="color: #a07078;">Compositions</p>
+          <h2 class="section-title">Original Works</h2>
+          <p class="section-description">
+            Original compositions — coming soon.
+          </p>
+
+          <div class="supporting-grid">
+            <article class="project-card project-card--supporting project-card--wip">
+              <div class="project-name">Works in progress</div>
+              <span class="badge-wip">Adding content soon</span>
+              <p class="project-blurb">
+                Original compositions and scores will appear here when ready.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!-- ── Music + technology ─────────────────────────────── -->
+        <div class="projects-secondary">
+          <p class="section-label" style="color: #a07078;">Crossover work</p>
+          <h2 class="section-title">Music &amp; Technology</h2>
+          <p class="section-description">
+            Projects that explore the intersection of music, computation,
+            and creative tools — coming soon.
+          </p>
+
+          <div class="supporting-grid">
+            <article class="project-card project-card--supporting project-card--wip">
+              <div class="project-name">Music-technology projects</div>
+              <span class="badge-wip">Adding content soon</span>
+              <p class="project-blurb">
+                Explorations at the boundary of music and software — analysis
+                tools, generative experiments, and creative computing.
+              </p>
+            </article>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -48,6 +100,8 @@
         <p class="footer-credit">
           &copy; 2026 Abigail Schidler &nbsp;&middot;&nbsp;
           <a href="index.html">Home</a>
+          &nbsp;&middot;&nbsp;
+          <a href="index.html#contact">Contact</a>
         </p>
       </div>
     </footer>
