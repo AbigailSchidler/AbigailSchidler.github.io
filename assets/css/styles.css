@@ -25,6 +25,7 @@
    19. Ripple background texture
    20. Project logo marks
    21. Dark mode
+   22. Song of the Week
    ========================================================================== */
 
 
@@ -1571,6 +1572,132 @@ body.waves-enhanced::after {
   opacity: 0.78;
   pointer-events: none;
   user-select: none;
+}
+
+
+/* ==========================================================================
+   22. Song of the Week
+   ========================================================================== */
+
+/*
+ * Compact horizontal card that displays the first track from a configured
+ * Spotify playlist. Sits below the explore-grid in the #elsewhere section.
+ * Content is populated by assets/js/song-of-week.js.
+ */
+
+.sotw-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.sotw-section > .section-label {
+  /* Override the block-level margin so the label sits inline on wide screens */
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.sotw-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.875rem 1.125rem;
+  flex: 1;
+  min-width: 260px;
+  max-width: 480px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sotw-card.sotw-loaded:hover {
+  border-color: var(--color-accent-blossom);
+  box-shadow: 0 4px 16px rgba(231, 195, 203, 0.18);
+}
+
+/* Album art square */
+.sotw-card__art {
+  flex-shrink: 0;
+  width: 68px;
+  height: 68px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--color-border);
+}
+
+.sotw-card__art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text + button column */
+.sotw-card__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.sotw-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a07078; /* matches explore-card--music label */
+  margin: 0;
+}
+
+.sotw-track {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sotw-artist {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin: 0 0 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sotw-btn {
+  align-self: flex-start;
+  font-size: 0.75rem !important;
+  padding: 0.3rem 0.7rem !important;
+  line-height: 1.4;
+}
+
+/* Hide the card entirely until JS populates it */
+.sotw-card:not(.sotw-loaded) {
+  display: none;
+}
+
+/* Responsive: stack section label above the card on narrow screens */
+@media (max-width: 640px) {
+  .sotw-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .sotw-card {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 

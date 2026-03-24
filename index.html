@@ -207,6 +207,14 @@
           </a>
 
         </div>
+
+        <!-- Song of the Week — populated by song-of-week.js -->
+        <div class="sotw-section">
+          <p class="section-label">Currently playing</p>
+          <div id="sotw-card" class="sotw-card" aria-label="Song of the Week">
+            <!-- JS fills this in; hidden via CSS until sotw-loaded is added -->
+          </div>
+        </div>
       </div>
     </section>
 
@@ -277,5 +285,6 @@
 
     <script src="assets/js/project-data.js"></script>
     <script src="assets/js/inject-cards.js"></script>
+    <script src="assets/js/song-of-week.js"></script>
   </body>
 </html>
