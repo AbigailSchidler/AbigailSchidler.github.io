@@ -23,8 +23,8 @@
       </div>
     </nav>
 
-    <!-- ── Hero ──────────────────────────────────────────────── -->
-    <div class="page-hero sc-hero">
+    <!-- ── 1. Project Header ─────────────────────────────────── -->
+    <div class="page-hero project-header sc-hero">
       <div class="container">
         <p class="breadcrumb">
           <a href="../projects.html">Projects</a> &rsaquo; Smart Cart
@@ -36,10 +36,10 @@
           grocery lists with normalized quantities and location-aware
           store discovery.
         </p>
-        <div class="tag-group">
+        <div class="tag-group sc-tags">
           <span class="tag">Flutter</span>
+          <span class="tag">Dart</span>
           <span class="tag">Isar Database</span>
-          <span class="tag">Ingredient Aggregation</span>
           <span class="tag">GPS Integration</span>
         </div>
         <div class="project-links">
@@ -53,8 +53,8 @@
       <div class="container">
         <div class="project-detail">
 
-          <!-- ── Quick highlights ─────────────────────────────── -->
-          <div class="project-section">
+          <!-- ── 2. Project Hero (quick preview) ──────────────── -->
+          <div class="project-section project-hero">
             <div class="highlights-grid">
               <div class="highlight-item">
                 <div class="highlight-label">Problem</div>
@@ -75,8 +75,67 @@
             </div>
           </div>
 
-          <!-- ── Workflow gallery ─────────────────────────────── -->
-          <div class="project-section sc-gallery" id="workflow-overview">
+          <!-- ── 3. Overview ───────────────────────────────────── -->
+          <div class="project-section sc-section">
+            <h2>Overview</h2>
+            <p>
+              Smart Cart simplifies the process of planning meals and building
+              grocery lists. Users create meals by adding ingredients with
+              structured quantity and unit support, and the app automatically
+              aggregates shared ingredients across recipes into a single
+              consolidated shopping list.
+            </p>
+            <p>
+              It also integrates location-aware store discovery to help users
+              find nearby grocery options, reducing friction between planning
+              meals and completing a shopping trip.
+            </p>
+          </div>
+
+          <!-- ── 4. Features ───────────────────────────────────── -->
+          <div class="project-section sc-section">
+            <h2>Features</h2>
+
+            <h3>Meal planning with structured ingredients</h3>
+            <p>
+              Users create meals by adding ingredients with selectable
+              measurement units. Ingredients and unit preferences are stored
+              persistently and reused across the app, reducing repetitive input
+              across multiple recipes.
+            </p>
+
+            <h3>Automatic ingredient aggregation</h3>
+            <p>
+              Ingredients from multiple meals are automatically merged into a
+              unified grocery list. Users can inspect quantities, track which
+              recipes each item belongs to, and adjust measurement formats
+              before shopping.
+            </p>
+
+            <h3>Location-aware store discovery</h3>
+            <p>
+              Map-based store discovery is integrated directly into the shopping
+              workflow. The app uses GPS to surface nearby grocery options via
+              OpenStreetMap, reducing the gap between planning and shopping.
+            </p>
+          </div>
+
+          <!-- ── 5. Technologies ───────────────────────────────── -->
+          <div class="project-section project-tech-stack sc-section">
+            <h2>Technologies</h2>
+            <div class="tag-group">
+              <span class="tag">Flutter</span>
+              <span class="tag">Dart</span>
+              <span class="tag">Isar Database</span>
+              <span class="tag">OpenStreetMap</span>
+              <span class="tag">GPS / Geolocator</span>
+              <span class="tag">Async data loading</span>
+              <span class="tag">Unit conversion</span>
+            </div>
+          </div>
+
+          <!-- ── 6. Media ───────────────────────────────────────── -->
+          <div class="project-section project-media sc-gallery" id="workflow-overview">
             <h2>Workflow Overview</h2>
 
             <div class="screenshot-gallery">
@@ -167,64 +226,32 @@
             </div>
           </div>
 
-          <!-- ── Overview ────────────────────────────────────── -->
+          <!-- ── 7. Reflections ─────────────────────────────────── -->
           <div class="project-section sc-section">
-            <h2>Overview</h2>
+            <h2>Reflections</h2>
             <p>
-              Smart Cart simplifies the process of planning meals and building
-              grocery lists. Users create meals by adding ingredients with
-              structured quantity and unit support, and the app automatically
-              aggregates shared ingredients across recipes into a single
-              consolidated shopping list.
+              The usability evaluation revealed strong performance across the
+              core workflow. A System Usability Scale test with nine participants
+              returned an overall score of <strong>84.2</strong> — usability
+              88.9, learnability 83.0 — confirming that users could navigate
+              the meal planning flow quickly and without confusion.
             </p>
             <p>
-              It also integrates location-aware store discovery to help users
-              find nearby grocery options, reducing friction between planning
-              meals and completing a shopping trip.
+              Building with Flutter's async architecture surfaced interesting
+              tradeoffs between loading performance and data freshness — especially
+              when handling the large OpenStreetMap grocery store dataset. Managing
+              unit normalization across ingredient types also required careful
+              design of the data model to avoid edge cases at aggregation time.
             </p>
           </div>
 
-          <!-- ── How it works ────────────────────────────────── -->
-          <div class="project-section sc-section">
-            <h2>How it works</h2>
-            <p>
-              Smart Cart organizes the cooking workflow into three connected
-              steps: meal planning, ingredient normalization, and grocery
-              aggregation. Users create meals by adding ingredients with
-              selectable measurement units — stored persistently and reused
-              across the app.
-            </p>
-            <p>
-              Ingredients from multiple meals are automatically merged into a
-              unified grocery list, where users can inspect quantities, track
-              usage across recipes, and adjust measurement formats. Map-based
-              store discovery is integrated directly into the shopping workflow.
-            </p>
-          </div>
-
-          <!-- ── Technical highlights ────────────────────────── -->
-          <div class="project-section sc-section">
-            <h2>Technical highlights</h2>
-            <p>
-              Built with Flutter and Isar for persistent local storage,
-              supporting structured ingredient tracking and user unit
-              preferences. The app handles asynchronous loading of large
-              grocery store map datasets and includes GPS-based store lookup
-              via OpenStreetMap. Additional features include gesture-based
-              navigation, unit conversion, and internationalization-ready
-              quantity handling.
-            </p>
-          </div>
-
-          <!-- ── Usability ────────────────────────────────────── -->
-          <div class="project-section sc-section">
-            <h2>Usability evaluation</h2>
-            <p>
-              Evaluated using System Usability Scale (SUS) testing with nine
-              participants. Overall score: <strong>84.2</strong> — usability
-              88.9, learnability 83.0. Users were able to navigate the meal
-              planning workflow quickly and without confusion.
-            </p>
+          <!-- ── 8. Links ───────────────────────────────────────── -->
+          <div class="project-section project-links">
+            <h2>Links</h2>
+            <div class="link-row">
+              <a href="#" class="btn btn-primary">Live Demo</a>
+              <a href="https://github.com/AbigailSchidler/Smart-Cart" class="btn btn-outline">GitHub</a>
+            </div>
           </div>
 
         </div>

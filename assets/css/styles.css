@@ -26,6 +26,7 @@
    20. Project logo marks
    21. Dark mode
    22. Song of the Week
+   23. Project timeline (projects.html)
    ========================================================================== */
 
 
@@ -868,7 +869,9 @@ nav {
   color: var(--color-accent);
   letter-spacing: 0.05em;
   padding-top: 0.1rem;
-  min-width: 2rem;
+  min-width: 4.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .course-name {
@@ -1086,6 +1089,84 @@ nav {
   color: var(--color-text);
   line-height: 1.55;
   font-weight: 500;
+}
+
+
+/* ==========================================================================
+   13b. Shared project-page structural classes
+   ==========================================================================
+
+   These classes define the consistent 8-section layout used across all
+   project detail pages. They layer on top of .project-section (spacing)
+   and project-specific .XX-section classes (accent colors/shapes).
+
+   Section order on every project page:
+     1. .page-hero.project-header   — title, intro, tags, CTA buttons
+     2. .project-section.project-hero   — highlights-grid quick preview
+     3. .project-section.[p]-section   — Overview
+     4. .project-section.[p]-section   — Features
+     5. .project-section.project-tech-stack.[p]-section  — Technologies
+     6. .project-section.project-media.[p]-gallery  — Screenshots / media
+     7. .project-section.[p]-section   — Reflections
+     8. .project-section.project-links  — Links (GitHub, demo, etc.)
+   ========================================================================== */
+
+/*
+ * .project-header — semantic companion added to .page-hero on all
+ * project detail pages. No visual override needed; .page-hero handles
+ * the visual treatment.
+ */
+
+/*
+ * .project-hero — wraps the highlights-grid quick-preview panel.
+ * First block inside .page-content on project pages.
+ * Spacing inherited from .project-section.
+ */
+
+/*
+ * .project-media — wraps screenshot galleries, figures, and video.
+ * Spacing inherited from .project-section.
+ */
+
+/*
+ * .project-tech-stack — technologies used section.
+ * Slightly larger tags with more breathing room than the hero tag-group.
+ */
+.project-tech-stack .tag-group {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  gap: 0.5rem;
+}
+
+.project-tech-stack .tag {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.7rem;
+}
+
+/*
+ * .project-section.project-links — standalone links section at the
+ * bottom of every project detail page. Rendered as a surface card.
+ * Distinct from .page-hero .project-links (the CTA button row).
+ */
+.project-section.project-links {
+  padding: 1.75rem 2rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.project-section.project-links .link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+@media (max-width: 480px) {
+  .project-section.project-links {
+    padding: 1.25rem 1.25rem;
+  }
 }
 
 
@@ -1862,3 +1943,246 @@ body.waves-enhanced::after {
 
 [data-theme="dark"] body.waves-enhanced::before { opacity: 0.75; }
 [data-theme="dark"] body.waves-enhanced::after  { opacity: 0.60; }
+
+
+/* ==========================================================================
+   23. Project timeline (projects.html)
+   ==========================================================================
+
+   Chronological vertical timeline replacing the grid/card layout on
+   projects.html. All .project-card / .projects-grid styles are preserved
+   for use on index.html.
+
+   Layout model (desktop):
+     [date — 96px] [dot — 28px] [card — 1fr]
+     The ::before track line runs centered in the dot column.
+
+   On mobile (≤ 600px):
+     [dot — 22px] [card — 1fr]
+     Date collapses into the card as .timeline-date-mobile.
+   ========================================================================== */
+
+.project-timeline {
+  --tl-date-w:  96px;    /* date label column width            */
+  --tl-dot-w:   28px;    /* dot column width (line centered)   */
+  --tl-gap:     3.25rem; /* vertical space between entries     */
+  position: relative;
+  margin-top: 3.5rem;
+}
+
+/*
+ * Vertical track line — 1 px, centered in the dot column.
+ * Gradient fade at the bottom suggests the timeline continues
+ * beyond the last (WIP) entry.
+ */
+.project-timeline::before {
+  content: '';
+  position: absolute;
+  left: calc(var(--tl-date-w) + var(--tl-dot-w) / 2);
+  top: 12px;
+  bottom: 36px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-border) 0%,
+    var(--color-border) 72%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Entry ───────────────────────────────────────────────────────────────── */
+
+.timeline-entry {
+  display: grid;
+  grid-template-columns: var(--tl-date-w) var(--tl-dot-w) 1fr;
+  align-items: start;
+  padding-bottom: var(--tl-gap);
+}
+
+.timeline-entry:last-child {
+  padding-bottom: 0;
+}
+
+/* ── Date label (left column) ─────────────────────────────────────────────── */
+
+.timeline-node {
+  padding-top: 0.15rem;
+  padding-right: 0.75rem;
+  text-align: right;
+}
+
+.timeline-date {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  line-height: 1.4;
+}
+
+/* ── Dot marker (center column) ──────────────────────────────────────────── */
+
+.timeline-marker {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.28rem;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 2px solid var(--color-bg);
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+}
+
+/* WIP: hollow dot with a faint glow ring */
+.timeline-entry--wip .timeline-dot {
+  background: var(--color-bg);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(124, 154, 139, 0.16);
+}
+
+/* ── Card content (right column) ─────────────────────────────────────────── */
+
+.timeline-card {
+  padding-left: 1.5rem;
+}
+
+/* Mobile-only date — hidden on desktop */
+.timeline-date-mobile {
+  display: none;
+}
+
+/* Course / context label */
+.timeline-context {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 0.3rem;
+}
+
+/* Project title */
+.timeline-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.timeline-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.timeline-title a:hover {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+/* One-line description */
+.timeline-blurb {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+  max-width: 540px;
+  margin-bottom: 0.875rem;
+}
+
+.timeline-card .tag-group {
+  margin-bottom: 0.875rem;
+}
+
+/* Action links */
+.timeline-links {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ── WIP entry ────────────────────────────────────────────────────────────── */
+
+.timeline-entry--wip .timeline-card {
+  opacity: 0.72;
+}
+
+.timeline-entry--wip .timeline-context {
+  color: var(--color-accent);
+}
+
+.timeline-entry--wip .badge-wip {
+  margin-bottom: 0.75rem;
+}
+
+/* ── Logo mark inside timeline card ──────────────────────────────────────── */
+
+/*
+ * Reuses .project-card__logo sizing; tightens the bottom margin so the
+ * logo sits closer to the title in the more compact timeline context.
+ */
+.timeline-card .project-card__logo {
+  margin-bottom: 0.5rem;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .project-timeline {
+    --tl-date-w: 0px;
+    --tl-dot-w:  22px;
+    --tl-gap:    2.5rem;
+  }
+
+  /* Collapse to 2 columns: dot | card */
+  .timeline-entry {
+    grid-template-columns: var(--tl-dot-w) 1fr;
+  }
+
+  /* Date column removed from layout; date appears inside card */
+  .timeline-node {
+    display: none;
+  }
+
+  .timeline-date-mobile {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 0.3rem;
+  }
+
+  .timeline-card {
+    padding-left: 0.875rem;
+  }
+
+  .timeline-title {
+    font-size: 1rem;
+  }
+}
+
+
+/* ── Timeline dark mode ──────────────────────────────────────────────────── */
+
+[data-theme="dark"] .timeline-dot {
+  border-color: var(--color-bg);
+}
+
+[data-theme="dark"] .timeline-entry--wip .timeline-dot {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(141, 172, 158, 0.20);
+}

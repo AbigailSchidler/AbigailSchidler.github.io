@@ -23,8 +23,8 @@
       </div>
     </nav>
 
-    <!-- ── Hero ──────────────────────────────────────────────── -->
-    <div class="page-hero fb-hero">
+    <!-- ── 1. Project Header ─────────────────────────────────── -->
+    <div class="page-hero project-header fb-hero">
       <div class="container">
         <p class="breadcrumb">
           <a href="../projects.html">Projects</a> &rsaquo; FillerBuster
@@ -60,8 +60,8 @@
       <div class="container">
         <div class="project-detail">
 
-          <!-- ── Quick highlights ─────────────────────────────── -->
-          <div class="project-section">
+          <!-- ── 2. Project Hero (quick preview) ──────────────── -->
+          <div class="project-section project-hero">
             <div class="highlights-grid">
               <div class="highlight-item">
                 <div class="highlight-label">Problem</div>
@@ -82,67 +82,26 @@
             </div>
           </div>
 
-          <!-- ── Workflow overview ─────────────────────────────── -->
-          <div class="project-section" id="workflow-overview">
-            <h2>Workflow Overview</h2>
+          <!-- ── 3. Overview ───────────────────────────────────── -->
+          <div class="project-section fb-section">
+            <h2>Overview</h2>
             <p>
-              The FillerBuster workflow is designed around iterative rehearsal
-              rather than a single-pass correction. Users upload a recording,
-              receive a verbatim transcript with filler words highlighted in
-              context, and can return to review and compare across multiple
-              saved takes.
+              FillerBuster is a speech-practice tool built with Next.js and
+              the Gemini API that helps users improve their presentations by
+              detecting filler words in recorded speech. Users upload a
+              recording and receive a verbatim transcript with filler words
+              highlighted inline — each marked word accompanied by an
+              explanation of why it was flagged.
             </p>
             <p>
-              The pipeline steps are: upload recording &rarr; generate verbatim
-              transcript &rarr; detect contextual filler words &rarr; review
-              highlighted transcript &rarr; compare across saved takes.
+              The tool is designed around iterative rehearsal rather than
+              single-pass correction. By preserving transcripts across multiple
+              takes, it helps speakers recognize patterns in their hesitation
+              language over time and track improvement session to session.
             </p>
-
-            <figure class="project-figure">
-              <a href="#lightbox-homepage">
-                <img
-                  src="../assets/images/project-screenshots/fillerbuster/homepage.png"
-                  alt="Dashboard showing saved rehearsal takes"
-                />
-              </a>
-              <figcaption>Transcript dashboard showing saved rehearsal takes</figcaption>
-            </figure>
-
-            <p>
-              Each saved recording is surfaced from the dashboard as a named
-              take. Selecting a take opens the highlighted transcript view,
-              where filler words are marked inline with contextual annotations
-              explaining why each phrase was flagged.
-            </p>
-
-            <figure class="project-figure">
-              <a href="#lightbox-transcript">
-                <img
-                  src="../assets/images/project-screenshots/fillerbuster/transcript.png"
-                  alt="Transcript with contextual filler-word highlights"
-                />
-              </a>
-              <figcaption>Transcript with contextual filler-word detection</figcaption>
-            </figure>
           </div>
 
-          <!-- Lightboxes -->
-          <div id="lightbox-homepage" class="lightbox" role="dialog" aria-modal="true" aria-label="Dashboard showing saved rehearsal takes">
-            <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
-            <div class="lightbox-frame">
-              <a href="#workflow-overview" class="lightbox-close" aria-label="Close">&times;</a>
-              <img src="../assets/images/project-screenshots/fillerbuster/homepage.png" alt="Dashboard showing saved rehearsal takes" />
-            </div>
-          </div>
-          <div id="lightbox-transcript" class="lightbox" role="dialog" aria-modal="true" aria-label="Transcript with contextual filler-word highlights">
-            <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
-            <div class="lightbox-frame">
-              <a href="#workflow-overview" class="lightbox-close" aria-label="Close">&times;</a>
-              <img src="../assets/images/project-screenshots/fillerbuster/transcript.png" alt="Transcript with contextual filler-word highlights" />
-            </div>
-          </div>
-
-          <!-- ── Feature story ─────────────────────────────────── -->
+          <!-- ── 4. Features ───────────────────────────────────── -->
           <div class="project-section fb-section">
             <h2>Features</h2>
 
@@ -176,64 +135,94 @@
             </p>
           </div>
 
-          <!-- ── Technical pipeline ────────────────────────────── -->
+          <!-- ── 5. Technologies ───────────────────────────────── -->
+          <div class="project-section project-tech-stack fb-section">
+            <h2>Technologies</h2>
+            <div class="tag-group">
+              <span class="tag">Next.js</span>
+              <span class="tag">React</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Gemini API</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">Structured JSON prompting</span>
+              <span class="tag">Audio transcription</span>
+            </div>
+          </div>
+
+          <!-- ── 6. Media ───────────────────────────────────────── -->
+          <div class="project-section project-media" id="workflow-overview">
+            <h2>Screenshots</h2>
+
+            <figure class="project-figure">
+              <a href="#lightbox-homepage">
+                <img
+                  src="../assets/images/project-screenshots/fillerbuster/homepage.png"
+                  alt="Dashboard showing saved rehearsal takes"
+                />
+              </a>
+              <figcaption>Transcript dashboard showing saved rehearsal takes</figcaption>
+            </figure>
+
+            <figure class="project-figure">
+              <a href="#lightbox-transcript">
+                <img
+                  src="../assets/images/project-screenshots/fillerbuster/transcript.png"
+                  alt="Transcript with contextual filler-word highlights"
+                />
+              </a>
+              <figcaption>Transcript with contextual filler-word detection</figcaption>
+            </figure>
+          </div>
+
+          <!-- Lightboxes -->
+          <div id="lightbox-homepage" class="lightbox" role="dialog" aria-modal="true" aria-label="Dashboard showing saved rehearsal takes">
+            <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
+            <div class="lightbox-frame">
+              <a href="#workflow-overview" class="lightbox-close" aria-label="Close">&times;</a>
+              <img src="../assets/images/project-screenshots/fillerbuster/homepage.png" alt="Dashboard showing saved rehearsal takes" />
+            </div>
+          </div>
+          <div id="lightbox-transcript" class="lightbox" role="dialog" aria-modal="true" aria-label="Transcript with contextual filler-word highlights">
+            <a href="#workflow-overview" class="lightbox-backdrop" aria-label="Close lightbox"></a>
+            <div class="lightbox-frame">
+              <a href="#workflow-overview" class="lightbox-close" aria-label="Close">&times;</a>
+              <img src="../assets/images/project-screenshots/fillerbuster/transcript.png" alt="Transcript with contextual filler-word highlights" />
+            </div>
+          </div>
+
+          <!-- ── 7. Reflections ─────────────────────────────────── -->
           <div class="project-section fb-section">
-            <h2>Technical Pipeline</h2>
+            <h2>Reflections</h2>
             <p>
-              FillerBuster uses a two-stage LLM workflow. First, uploaded audio
-              is transcribed verbatim using the Gemini API. Then the transcript
-              is passed through Gemini again with structured prompting that
-              returns JSON segments preserving original punctuation while
-              tagging filler phrases and their detection rationale.
+              Because filler detection depends heavily on context, the central
+              design challenge was keeping users in control of the feedback
+              process. Surfacing the reasoning behind each flagged word —
+              rather than presenting model output as authoritative — made the
+              tool feel more like a collaborative reviewer than an automated
+              judge.
             </p>
             <p>
-              This structured output enables efficient rendering of interactive
-              transcript highlights in the React interface, with each flagged
-              segment carrying the context needed to display its explanation
-              inline.
+              Designing around iterative rehearsal rather than single-pass
+              correction shaped the entire information architecture. Instead
+              of treating each session as isolated, the saved-takes model
+              invites speakers to compare across attempts — recognizing whether
+              fillers cluster at transitions, under time pressure, or in
+              particular topic areas.
+            </p>
+            <p>
+              Future directions include user verification of flagged filler
+              words to improve model accuracy, progress tracking across
+              sessions, and scoring based on accepted corrections over time.
             </p>
           </div>
 
-          <!-- ── Designing transparent feedback ────────────────── -->
-          <div class="project-section fb-section">
-            <h2>Designing Transparent Feedback</h2>
-            <p>
-              Because filler detection depends heavily on context, the interface
-              exposes the reasoning behind each highlighted word rather than
-              treating model output as authoritative. Users see not just which
-              words were flagged, but why — grounding the feedback in the
-              specific phrasing that triggered it.
-            </p>
-            <p>
-              This keeps users in control of the feedback process and supports
-              verification pathways in future scoring workflows, where user
-              confirmation of flagged words could inform accuracy metrics.
-            </p>
-          </div>
-
-          <!-- ── Supporting reflective practice ────────────────── -->
-          <div class="project-section fb-section">
-            <h2>Supporting Reflective Speech Practice</h2>
-            <p>
-              Instead of treating filler detection as a single-pass correction
-              tool, FillerBuster is designed around iterative rehearsal.
-              By preserving transcripts across sessions, the interface helps
-              users recognize patterns in hesitation language — whether fillers
-              cluster at transitions, under time pressure, or in particular
-              topic areas — and track improvement over time.
-            </p>
-          </div>
-
-          <!-- ── Future directions ──────────────────────────────── -->
-          <div class="project-section fb-section">
-            <h2>Future Directions</h2>
-            <p>Possible improvements include:</p>
-            <ul>
-              <li>User verification of flagged filler words to improve model accuracy</li>
-              <li>Progress tracking and trend visualization across sessions</li>
-              <li>Scoring based on accepted corrections over time</li>
-              <li>Expanded analytics for speech pattern recognition</li>
-            </ul>
+          <!-- ── 8. Links ───────────────────────────────────────── -->
+          <div class="project-section project-links">
+            <h2>Links</h2>
+            <div class="link-row">
+              <a href="#" class="btn btn-primary">Live Demo</a>
+              <a href="https://github.com/AbigailSchidler/cse481-tech-lab" class="btn btn-outline">GitHub</a>
+            </div>
           </div>
 
         </div>

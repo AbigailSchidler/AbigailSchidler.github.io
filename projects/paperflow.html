@@ -23,8 +23,8 @@
       </div>
     </nav>
 
-    <!-- ── Hero ──────────────────────────────────────────────── -->
-    <div class="page-hero pf-hero">
+    <!-- ── 1. Project Header ─────────────────────────────────── -->
+    <div class="page-hero project-header pf-hero">
       <div class="container">
         <p class="breadcrumb">
           <a href="../projects.html">Projects</a> &rsaquo; Paperflow
@@ -59,8 +59,8 @@
       <div class="container">
         <div class="project-detail">
 
-          <!-- ── Quick highlights ─────────────────────────────── -->
-          <div class="project-section">
+          <!-- ── 2. Project Hero (quick preview) ──────────────── -->
+          <div class="project-section project-hero">
             <div class="highlights-grid">
               <div class="highlight-item">
                 <div class="highlight-label">Problem</div>
@@ -81,8 +81,76 @@
             </div>
           </div>
 
-          <!-- ── Workflow gallery ─────────────────────────────── -->
-          <div class="project-section pf-gallery" id="workflow-overview">
+          <!-- ── 3. Overview ───────────────────────────────────── -->
+          <div class="project-section pf-section">
+            <h2>Overview</h2>
+            <p>
+              Paperflow is an LLM-assisted workspace that helps researchers
+              transform dense academic papers into structured presentation
+              flows. Users upload a PDF and specify constraints like audience
+              level and presentation length — Paperflow generates a
+              timeline-based outline with aligned talking points and speaker
+              notes.
+            </p>
+            <p>
+              By combining automated content extraction with interactive
+              editing tools, the system supports rapid presentation
+              preparation while keeping users in control of the final
+              narrative.
+            </p>
+          </div>
+
+          <!-- ── 4. Features ───────────────────────────────────── -->
+          <div class="project-section pf-section">
+            <h2>Features</h2>
+
+            <h3>PDF structure extraction</h3>
+            <p>
+              PDFPlumber parses uploaded academic papers into labeled
+              sections, preserving the document's logical structure as a
+              foundation for the generation pipeline rather than treating
+              the paper as a flat text blob.
+            </p>
+
+            <h3>Structured outline generation</h3>
+            <p>
+              Gemini generates candidate presentation structure — slide
+              titles, timing estimates, and section priorities — which users
+              review and refine before committing to transcript generation.
+              This staged checkpoint reduces downstream correction effort.
+            </p>
+
+            <h3>Editable timeline interface</h3>
+            <p>
+              The presentation flow is represented as editable timeline
+              nodes that can be reordered, expanded, or annotated with
+              Markdown — enabling spatial reasoning about structure without
+              losing access to the underlying source content.
+            </p>
+
+            <h3>Source-linked citations</h3>
+            <p>
+              Each generated talking point carries a link back to the
+              source passage in the original paper, keeping the generation
+              transparent and verifiable throughout the editing process.
+            </p>
+          </div>
+
+          <!-- ── 5. Technologies ───────────────────────────────── -->
+          <div class="project-section project-tech-stack pf-section">
+            <h2>Technologies</h2>
+            <div class="tag-group">
+              <span class="tag">React</span>
+              <span class="tag">Python</span>
+              <span class="tag">PDFPlumber</span>
+              <span class="tag">Gemini API</span>
+              <span class="tag">Markdown editing</span>
+              <span class="tag">REST API</span>
+            </div>
+          </div>
+
+          <!-- ── 6. Media ───────────────────────────────────────── -->
+          <div class="project-section project-media pf-gallery" id="workflow-overview">
             <h2>Workflow Overview</h2>
 
             <div class="screenshot-gallery">
@@ -153,60 +221,34 @@
             </div>
           </div>
 
-          <!-- ── Overview ────────────────────────────────────── -->
+          <!-- ── 7. Reflections ─────────────────────────────────── -->
           <div class="project-section pf-section">
-            <h2>Overview</h2>
+            <h2>Reflections</h2>
             <p>
-              Paperflow is an LLM-assisted workspace that helps researchers
-              transform dense academic papers into structured presentation
-              flows. Users upload a PDF and specify constraints like audience
-              level and presentation length — Paperflow generates a
-              timeline-based outline with aligned talking points and speaker
-              notes.
+              A key lesson was the value of staged interaction checkpoints
+              in AI-assisted workflows. Instead of producing a fixed output
+              automatically, Paperflow introduces structured review moments —
+              parsed sections, outline approval, timing constraints,
+              transcript regeneration — where users can verify and adjust
+              before committing.
             </p>
             <p>
-              By combining automated content extraction with interactive
-              editing tools, the system supports rapid presentation
-              preparation while keeping users in control of the final
-              narrative.
+              This staged model improved the perceived reliability of the
+              generated output: when users understood what the system did at
+              each step, they were more likely to trust the final result and
+              less likely to need extensive correction afterward. The
+              tradeoff is a longer workflow, but for research presentation
+              preparation, thoroughness is usually worth the added steps.
             </p>
           </div>
 
-          <!-- ── How it works ────────────────────────────────── -->
-          <div class="project-section pf-section">
-            <h2>How it works</h2>
-            <p>
-              Paperflow uses a modular pipeline that combines PDF structure
-              extraction with staged LLM generation. After parsing a paper
-              into sections using PDFPlumber, Gemini generates candidate
-              presentation structure, slide titles, and talking points.
-              Users review and refine these before transcript generation.
-            </p>
-            <p>
-              The interface represents presentation flow as editable timeline
-              nodes that can be reordered, expanded, or annotated with
-              Markdown — enabling spatial reasoning about structure while
-              preserving transparency through source-linked citations for
-              each generated talking point.
-            </p>
-          </div>
-
-          <!-- ── Design decisions ────────────────────────────── -->
-          <div class="project-section pf-section">
-            <h2>Design decisions</h2>
-            <p>
-              A key goal was maintaining user agency throughout AI-assisted
-              generation. Instead of producing a fixed slide deck
-              automatically, Paperflow introduces structured checkpoints
-              where users review parsed sections, approve outlines, adjust
-              timing constraints, and regenerate transcripts with targeted
-              feedback.
-            </p>
-            <p>
-              This staged interaction model improves trust, reduces
-              downstream correction effort, and supports flexible adaptation
-              of research content for different audiences and formats.
-            </p>
+          <!-- ── 8. Links ───────────────────────────────────────── -->
+          <div class="project-section project-links">
+            <h2>Links</h2>
+            <div class="link-row">
+              <a href="#" class="btn btn-primary">Live Demo</a>
+              <a href="https://github.com/AbigailSchidler/Paper-Flow" class="btn btn-outline">GitHub</a>
+            </div>
           </div>
 
         </div>

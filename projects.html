@@ -27,8 +27,9 @@
         <p class="section-label">Work</p>
         <h1>Projects</h1>
         <p class="page-intro">
-          A catalog of things I've built — focused on human-AI interaction,
-          NLP, and tools that help people learn and create.
+          A progression of things I've built — from early coursework through
+          AI-assisted tools, across human-AI interaction, NLP, and interface
+          design.
         </p>
       </div>
     </div>
@@ -36,130 +37,166 @@
     <div class="page-content">
       <div class="container">
 
-        <!-- ── Featured ───────────────────────────────────────── -->
-        <div class="projects-grid">
+        <div class="project-timeline">
 
-          <article class="project-card">
-            <div class="project-card__thumbnail">
-              <img src="assets/images/project-thumbnails/paperflow.png" alt="Paperflow interface" />
+          <!-- ── Autumn 2023 ─────────────────────────────────────── -->
+          <article class="timeline-entry">
+            <div class="timeline-node">
+              <time class="timeline-date">Autumn<br>2023</time>
             </div>
-            <div class="project-name">Paperflow</div>
-            <p class="project-blurb">
-              An LLM-assisted workspace that transforms academic papers into
-              structured presentation timelines — with talking points, speaker
-              notes, and interactive editing.
-            </p>
-            <div class="tag-group">
-              <span class="tag">React</span>
-              <span class="tag">Python</span>
-              <span class="tag">PDF Parsing</span>
-              <span class="tag">Human-AI Interaction</span>
+            <div class="timeline-marker" aria-hidden="true">
+              <div class="timeline-dot"></div>
             </div>
-            <div class="project-links">
-              <a href="projects/paperflow.html" class="btn btn-primary">View Project</a>
-              <a href="https://github.com/AbigailSchidler/Paper-Flow" class="btn btn-outline">GitHub</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-card__thumbnail">
-              <img src="assets/images/project-thumbnails/smart-cart.png" alt="Smart Cart interface" />
-            </div>
-            <div class="project-name">Smart Cart</div>
-            <p class="project-blurb">
-              A mobile meal-planning app that turns recipes into consolidated
-              grocery lists with normalized quantities and location-aware
-              store discovery.
-            </p>
-            <div class="tag-group">
-              <span class="tag">Flutter</span>
-              <span class="tag">Isar Database</span>
-              <span class="tag">Ingredient Aggregation</span>
-              <span class="tag">GPS Integration</span>
-            </div>
-            <div class="project-links">
-              <a href="projects/smart-cart.html" class="btn btn-primary">View Project</a>
-              <a href="https://github.com/AbigailSchidler/Smart-Cart" class="btn btn-outline">GitHub</a>
+            <div class="timeline-card">
+              <time class="timeline-date-mobile">Autumn 2023</time>
+              <span class="timeline-context">CSE 154 &middot; Web Programming</span>
+              <h2 class="timeline-title">
+                <a href="projects/party-rental.html">Party Reservation Platform</a>
+              </h2>
+              <p class="timeline-blurb">
+                A full-stack reservation system for booking party spaces and
+                activity amenities — with account management, time-slot
+                scheduling, and reservation history.
+              </p>
+              <div class="tag-group">
+                <span class="tag">HTML/CSS/JS</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">SQLite</span>
+              </div>
+              <div class="timeline-links">
+                <a href="projects/party-rental.html" class="btn btn-ghost">View project &rarr;</a>
+                <a href="https://github.com/AbigailSchidler/party-reservation" class="btn btn-ghost">GitHub</a>
+              </div>
             </div>
           </article>
 
-        </div>
+          <!-- ── Spring 2025 ─────────────────────────────────────── -->
+          <article class="timeline-entry">
+            <div class="timeline-node">
+              <time class="timeline-date">Spring<br>2025</time>
+            </div>
+            <div class="timeline-marker" aria-hidden="true">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <time class="timeline-date-mobile">Spring 2025</time>
+              <span class="timeline-context">CSE 340 &middot; Interaction Programming</span>
+              <h2 class="timeline-title">
+                <a href="projects/smart-cart.html">Smart Cart</a>
+              </h2>
+              <p class="timeline-blurb">
+                A Flutter mobile app that turns multiple recipes into a single
+                consolidated grocery list — with normalized quantities, unit
+                conversion, and GPS-based store discovery.
+              </p>
+              <div class="tag-group">
+                <span class="tag">Flutter</span>
+                <span class="tag">Dart</span>
+                <span class="tag">Isar Database</span>
+                <span class="tag">GPS Integration</span>
+              </div>
+              <div class="timeline-links">
+                <a href="projects/smart-cart.html" class="btn btn-ghost">View project &rarr;</a>
+                <a href="https://github.com/AbigailSchidler/Smart-Cart" class="btn btn-ghost">GitHub</a>
+              </div>
+            </div>
+          </article>
 
-        <!-- ── Earlier work ───────────────────────────────────── -->
-        <div class="projects-secondary">
-          <p class="section-label">Earlier work</p>
-          <h2 class="section-title">More Projects</h2>
-          <p class="section-description">
-            Earlier coursework and experiments in frontend interaction,
-            AI tooling, and interface design.
-          </p>
-
-          <div class="supporting-grid">
-
-            <article class="project-card project-card--supporting">
+          <!-- ── Winter 2026 — FillerBuster ─────────────────────── -->
+          <article class="timeline-entry">
+            <div class="timeline-node">
+              <time class="timeline-date">Winter<br>2026</time>
+            </div>
+            <div class="timeline-marker" aria-hidden="true">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <time class="timeline-date-mobile">Winter 2026</time>
+              <span class="timeline-context">CSE 481L &middot; Tech Lab</span>
               <img
                 class="project-card__logo"
                 src="assets/images/icons/fillerbuster.png"
-                alt="FillerBuster logo"
+                alt=""
+                aria-hidden="true"
               />
-              <div class="project-name">FillerBuster</div>
-              <p class="project-blurb">
-                A speech-practice tool that transcribes recordings and
-                highlights filler words in context, with explanations for
-                why each phrase was flagged.
+              <h2 class="timeline-title">
+                <a href="projects/fillerbuster.html">FillerBuster</a>
+              </h2>
+              <p class="timeline-blurb">
+                A speech-practice tool that transcribes recordings and highlights
+                filler words in context — with explanations for why each phrase
+                was flagged.
               </p>
               <div class="tag-group">
                 <span class="tag">Next.js</span>
                 <span class="tag">Gemini API</span>
                 <span class="tag">Supabase</span>
               </div>
-              <div class="project-links">
-                <a href="projects/fillerbuster.html" class="btn btn-outline">View Project</a>
-                <a href="https://github.com/AbigailSchidler/cse481-tech-lab" class="btn btn-outline">GitHub</a>
+              <div class="timeline-links">
+                <a href="projects/fillerbuster.html" class="btn btn-ghost">View project &rarr;</a>
+                <a href="https://github.com/AbigailSchidler/cse481-tech-lab" class="btn btn-ghost">GitHub</a>
               </div>
-            </article>
+            </div>
+          </article>
 
-            <article class="project-card project-card--supporting">
-              <div class="project-name">Party Reservation Platform</div>
-              <p class="project-blurb">
-                A full-stack reservation platform for booking party spaces and
-                activity amenities, with account management, time-slot
-                scheduling, and reservation history.
+          <!-- ── Winter 2026 — Paperflow ─────────────────────────── -->
+          <article class="timeline-entry">
+            <div class="timeline-node">
+              <time class="timeline-date" aria-label="Also Winter 2026">&mdash;</time>
+            </div>
+            <div class="timeline-marker" aria-hidden="true">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-context">CSE 481L &middot; Capstone</span>
+              <img
+                class="project-card__logo"
+                src="assets/images/icons/paperflow-boat.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <h2 class="timeline-title">
+                <a href="projects/paperflow.html">Paperflow</a>
+              </h2>
+              <p class="timeline-blurb">
+                An LLM-assisted workspace that transforms dense academic papers
+                into structured presentation timelines — with talking points,
+                speaker notes, and source-linked citations.
               </p>
               <div class="tag-group">
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">Express</span>
-                <span class="tag">SQLite</span>
+                <span class="tag">React</span>
+                <span class="tag">Python</span>
+                <span class="tag">PDF Parsing</span>
+                <span class="tag">Human-AI Interaction</span>
               </div>
-              <div class="project-links">
-                <a href="projects/party-rental.html" class="btn btn-outline">View Project</a>
-                <a href="https://github.com/AbigailSchidler/party-reservation" class="btn btn-outline">GitHub</a>
+              <div class="timeline-links">
+                <a href="projects/paperflow.html" class="btn btn-ghost">View project &rarr;</a>
+                <a href="https://github.com/AbigailSchidler/Paper-Flow" class="btn btn-ghost">GitHub</a>
               </div>
-            </article>
+            </div>
+          </article>
 
-          </div>
-        </div>
-
-        <!-- ── In progress ────────────────────────────────────── -->
-        <div class="projects-secondary">
-          <p class="section-label">Currently building</p>
-          <h2 class="section-title">In Progress</h2>
-
-          <div class="supporting-grid">
-
-            <article class="project-card project-card--supporting project-card--wip">
-              <div class="project-name">Productivity App</div>
-              <span class="badge-wip">Currently building MVP</span>
-              <p class="project-blurb">
+          <!-- ── Now (WIP) ───────────────────────────────────────── -->
+          <article class="timeline-entry timeline-entry--wip">
+            <div class="timeline-node">
+              <time class="timeline-date">Now</time>
+            </div>
+            <div class="timeline-marker" aria-hidden="true">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <time class="timeline-date-mobile">Now</time>
+              <span class="timeline-context">Currently building</span>
+              <h2 class="timeline-title">Productivity App</h2>
+              <span class="badge-wip">Building MVP</span>
+              <p class="timeline-blurb">
                 A structured workflow tool exploring task organization and
                 human-centered productivity systems.
               </p>
-            </article>
+            </div>
+          </article>
 
-          </div>
         </div>
 
       </div>

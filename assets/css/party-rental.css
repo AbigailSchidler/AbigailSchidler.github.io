@@ -1,0 +1,99 @@
+/* ==========================================================================
+   party-rental.css — Project-specific theming for the Party Rental detail page
+   Scoped entirely to .pr-* classes; does not override global portfolio styles.
+   ========================================================================== */
+
+
+/* ── Palette ──────────────────────────────────────────────────────────────── */
+
+:root {
+  --pr-gold:       #b8956b;                    /* warm honey amber — festive, welcoming */
+  --pr-gold-deep:  #7a5c35;                    /* darkened for text — clears WCAG AA */
+  --pr-gold-tint:  rgba(184, 149, 107, 0.07);  /* hero wash */
+  --pr-gold-line:  rgba(184, 149, 107, 0.28);  /* borders */
+}
+
+
+/* ── Hero band ────────────────────────────────────────────────────────────── */
+
+/*
+ * A warm amber-to-honey gradient wash behind the hero band.
+ * Evokes warmth and celebration without conflicting with the
+ * portfolio's off-white background.
+ */
+.pr-hero {
+  background: linear-gradient(
+    140deg,
+    rgba(184, 149, 107, 0.07) 0%,
+    rgba(193, 166, 110, 0.04) 100%
+  );
+}
+
+
+/* ── Section accent panels ────────────────────────────────────────────────── */
+
+/*
+ * .pr-section wraps prose content sections.
+ * A left border in warm amber gives the Party Rental pages a
+ * distinct identity from the other projects while staying within
+ * the same structural vocabulary.
+ */
+.pr-section {
+  position: relative;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--pr-gold-line);
+}
+
+/*
+ * Section headings in the Party Rental amber-deep color.
+ * #7a5c35 on page background (~5.2:1) clears WCAG AA at this size.
+ */
+.pr-section h2 {
+  color: var(--pr-gold-deep);
+}
+
+/*
+ * Small diamond node before each section heading — references the
+ * structured, tile-based UI language of a reservation interface.
+ */
+.pr-section h2::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--pr-gold);
+  border-radius: 1px;
+  transform: rotate(45deg);
+  margin-right: 0.6rem;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  flex-shrink: 0;
+  opacity: 0.75;
+}
+
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .pr-section {
+    padding-left: 1rem;
+  }
+}
+
+
+/* ── Dark mode ────────────────────────────────────────────────────────────── */
+
+[data-theme="dark"] {
+  --pr-gold-deep:  #c9a875;                    /* amber lightened for dark bg */
+  --pr-gold-tint:  rgba(184, 149, 107, 0.09);  /* slightly more opaque hero wash */
+  --pr-gold-line:  rgba(184, 149, 107, 0.22);  /* softer border */
+}
+
+[data-theme="dark"] .pr-hero {
+  background: linear-gradient(
+    140deg,
+    rgba(184, 149, 107, 0.07) 0%,
+    rgba(193, 166, 110, 0.03) 100%
+  );
+}

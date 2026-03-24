@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Party Reservation Platform — Abigail Schidler</title>
     <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/party-rental.css" />
     <script src="../assets/js/theme.js"></script>
   </head>
   <body>
@@ -22,8 +23,8 @@
       </div>
     </nav>
 
-    <!-- ── Hero ──────────────────────────────────────────────── -->
-    <div class="page-hero">
+    <!-- ── 1. Project Header ─────────────────────────────────── -->
+    <div class="page-hero project-header pr-hero">
       <div class="container">
         <p class="breadcrumb">
           <a href="../projects.html">Projects</a> &rsaquo; Party Reservation Platform
@@ -54,8 +55,8 @@
       <div class="container">
         <div class="project-detail">
 
-          <!-- ── Quick highlights ─────────────────────────────── -->
-          <div class="project-section">
+          <!-- ── 2. Project Hero (quick preview) ──────────────── -->
+          <div class="project-section project-hero">
             <div class="highlights-grid">
               <div class="highlight-item">
                 <div class="highlight-label">Problem</div>
@@ -76,17 +77,8 @@
             </div>
           </div>
 
-          <!-- ── Screenshot placeholder ──────────────────────── -->
-          <div class="project-section">
-            <div class="project-screenshot">
-              <div class="screenshot-placeholder">
-                Screenshot coming soon
-              </div>
-            </div>
-          </div>
-
-          <!-- ── Overview ────────────────────────────────────── -->
-          <div class="project-section">
+          <!-- ── 3. Overview ───────────────────────────────────── -->
+          <div class="project-section pr-section">
             <h2>Overview</h2>
             <p>
               A full-stack reservation platform for booking party spaces and
@@ -102,32 +94,12 @@
             </p>
           </div>
 
-          <!-- ── Workflow ─────────────────────────────────────── -->
-          <div class="project-section">
-            <h2>Workflow</h2>
-            <p>
-              The booking flow is structured as a linear sequence — each step
-              builds on the previous and narrows the user toward a confirmed
-              reservation:
-            </p>
-            <ol>
-              <li>Browse the service catalog by venue or activity type</li>
-              <li>View individual service detail pages with availability</li>
-              <li>Select a time slot using the scheduling interface</li>
-              <li>Confirm the reservation through the account system</li>
-              <li>Review booking history from the account dashboard</li>
-            </ol>
-          </div>
-
-          <!-- ── Features ─────────────────────────────────────── -->
-          <div class="project-section">
+          <!-- ── 4. Features ───────────────────────────────────── -->
+          <div class="project-section pr-section">
             <h2>Features</h2>
-            <p>
-              The platform covers the full arc of a reservation workflow —
-              from discovery to confirmation to history:
-            </p>
             <ul>
               <li>Service catalog browsing across venue and activity types</li>
+              <li>Individual service detail pages with live availability</li>
               <li>Time-slot scheduling with calendar-based availability</li>
               <li>Account-based booking storage and history view</li>
               <li>Search and availability filtering across services</li>
@@ -136,33 +108,59 @@
             </ul>
           </div>
 
-          <!-- ── Technical implementation ────────────────────── -->
-          <div class="project-section">
-            <h2>Technical implementation</h2>
+          <!-- ── 5. Technologies ───────────────────────────────── -->
+          <div class="project-section project-tech-stack pr-section">
+            <h2>Technologies</h2>
+            <div class="tag-group">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">Server-side conflict checking</span>
+            </div>
+          </div>
+
+          <!-- ── 6. Media ───────────────────────────────────────── -->
+          <div class="project-section project-media">
+            <h2>Screenshots</h2>
+            <div class="project-screenshot">
+              <div class="screenshot-placeholder">
+                Screenshot coming soon
+              </div>
+            </div>
+          </div>
+
+          <!-- ── 7. Reflections ─────────────────────────────────── -->
+          <div class="project-section pr-section">
+            <h2>Reflections</h2>
             <p>
-              The backend is built with Node.js and Express, using SQLite for
-              persistent storage of services, accounts, and reservations.
-              Time-slot availability is managed server-side with conflict
-              checking enforced at the database level.
+              Building the full booking flow as a single integrated system —
+              from catalog browsing through time-slot selection to account
+              persistence — surfaced coordination challenges that isolated
+              frontend exercises don't reveal. Time-slot conflict checking
+              had to be enforced at the database level to remain reliable
+              across concurrent sessions, which required thinking carefully
+              about when validation happens client-side versus server-side.
             </p>
             <p>
-              The frontend handles search and filter interactions without
-              full-page reloads. The reservation confirmation workflow validates
-              input and updates availability state before persisting the booking
-              to the user's account record.
+              Designing the reservation state machine — available, held,
+              confirmed, cancelled — also revealed how much UI complexity
+              follows directly from backend data decisions. This project
+              clarified how frontend interaction principles and backend
+              architecture are more tightly coupled than they appear when
+              learned in isolation.
             </p>
           </div>
 
-          <!-- ── Context ──────────────────────────────────────── -->
-          <div class="project-section">
-            <h2>Context</h2>
-            <p>
-              Built as a full-stack interaction design exercise, this project
-              applied frontend layout and interaction principles to a real
-              booking workflow, while also implementing the backend
-              infrastructure needed to support persistent accounts, time-based
-              scheduling, and data retrieval across sessions.
-            </p>
+          <!-- ── 8. Links ───────────────────────────────────────── -->
+          <div class="project-section project-links">
+            <h2>Links</h2>
+            <div class="link-row">
+              <a href="#" class="btn btn-primary">Live Demo</a>
+              <a href="https://github.com/AbigailSchidler/party-reservation" class="btn btn-outline">GitHub</a>
+            </div>
           </div>
 
         </div>
